@@ -90,15 +90,15 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：将负荷、可再生能源、天气和近期价格统计量转成提示，判断次日是否出现价格尖峰。
   - 结果：作者报告少样本条件下可超过 SVM、XGBoost；任务是极端日分类，不是完整价格轨迹预测。
 
-- **Electricity Market Price Forecast via LLM-based Sentiment Analysis and TimeXer** — IEEE 会议论文. [Paper](https://ieeexplore.ieee.org/document/11200590)
+- **Electricity Market Price Forecast via LLM-based Sentiment Analysis and TimeXer** — 2025 7th International Conference on Data-driven Optimization of Complex Systems (DOCS), 2025. [DOI](https://doi.org/10.1109/DOCS67533.2025.11200590)
   - 方法：LLM 提取市场情绪作为特征，结合 TimeXer 时序模型进行电价预测。
   - 阅读重点：LLM 情绪特征相对传统文本特征的信息增益；与“报价行为与情绪预测”一条的对照组设计。
 
-- **Adaptive Frequency-Domain Feature Extraction With Large Language Models for Accurate Electricity Market Forecasting** — IEEE 会议论文. [Paper](https://ieeexplore.ieee.org/document/11073553)
+- **Adaptive Frequency-Domain Feature Extraction With Large Language Models for Accurate Electricity Market Forecasting** — *IEEE Transactions on Consumer Electronics*, 2025. [DOI](https://doi.org/10.1109/TCE.2025.3585889)
   - 方法：LLM 辅助自适应频域特征提取，用于电价/市场预测。
   - 阅读重点：频域分解与 LLM 的作用边界；是否真正引入语言推理，还是作为特征选择器。
 
-- **Application of Large Language Models in Intelligent Preprocessing and Forecasting of Electricity Price** — IEEE 会议论文. [Paper](https://ieeexplore.ieee.org/document/10984532)
+- **Application of Large Language Models in Intelligent Preprocessing and Forecasting of Electricity Price** — 2025 4th International Conference on Smart Grid and Green Energy (ICSGGE), 2025. [DOI](https://doi.org/10.1109/ICSGGE64667.2025.10984532)
   - 方法：LLM 用于电价数据的智能预处理与预测。
   - 阅读重点：预处理（清洗/补齐/特征）环节与预测环节各自的增益；数据质量差时 LLM 的鲁棒性。
 
@@ -123,12 +123,12 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：LLM 智能体解析市场规则与指令并生成竞价动作，结合优化与强化学习。
   - 阅读重点：LLM 对规则/状态的语义理解与下游竞价模块的贡献分解，以及跨市场迁移能力。
 
-- **An Explainable Cognitive Bidding Agent for Electricity Markets: A Framework for Zero-Shot Generalization using Large Language Models** — IEEE 会议论文. [Paper](https://ieeexplore.ieee.org/document/11425567)
+- **An Explainable Cognitive Bidding Agent for Electricity Markets: A Framework for Zero-Shot Generalization using Large Language Models** — 2025 IEEE 9th Conference on Energy Internet and Energy System Integration (EI²), 2025. [DOI](https://doi.org/10.1109/EI268505.2025.11425567)
   - 场景：电力市场竞价智能体的零样本泛化，强调可解释性与认知决策过程。
   - 方法：以 LLM 为竞价决策核心，给出可解释的策略推理，检验未训练市场下的泛化。
   - 阅读重点：零样本跨市场泛化的真实边界；可解释性是否为事后包装而非策略来源。
 
-- **Dual-agent LLMs with genetic evolution for automated bidding strategy optimization in electricity markets** — IEEE 会议论文. [Paper](https://ieeexplore.ieee.org/document/11609740)
+- **Dual-agent LLMs with genetic evolution for automated bidding strategy optimization in electricity markets** — IET Conference Proceedings, 2026. [DOI](https://doi.org/10.1049/icp.2026.1716)
   - 场景：电力市场自动竞价策略优化。
   - 方法：双智能体 LLM 结合遗传演化，迭代生成与选择竞价策略。
   - 阅读重点：遗传演化的选择压力是否由真实市场反馈驱动；策略优化的收敛性与过拟合风险。
@@ -159,7 +159,7 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：LLM 评价交易公平性并塑造多智能体强化学习奖励。
   - 阅读重点：与同组“Scalable Fairness Shaping”的关系与区别；公平性塑造的扩展性与评价稳定性。
 
-- **Equity-Aware Peer-to-Peer Energy Trading Market to Mitigate Energy Poverty: An LLM–RL Agentic Workflow** — IEEE 会议论文. [Paper](https://ieeexplore.ieee.org/document/11250957)
+- **Equity-Aware Peer-to-Peer Energy Trading Market to Mitigate Energy Poverty: An LLM–RL Agentic Workflow** — *IEEE Transactions on Energy Markets, Policy and Regulation*, 2026. [DOI](https://doi.org/10.1109/TEMPR.2025.3633992)
   - 场景：面向缓解能源贫困的权益（equity）感知 P2P 能源交易。
   - 方法：LLM 与强化学习结合的智能体工作流，在交易决策中显式纳入公平/权益目标。
   - 阅读重点：公平目标与经济激励的权衡，以及“缓解能源贫困”这一社会目标的可量化验证。
@@ -189,12 +189,12 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：利用上下文学习塑造规则式、短视或战略性行为，对照动态规划和竞价基准。
   - 结果：概念验证展示理性策略及系统性行为偏差；不等同于经过真实参与者行为校准的市场模拟器。
 
-- **A Generative AI Agent-Based Simulation for Electricity Market and Load Forecasting Game Strategy** — ACM 会议论文. [Paper](https://doi.org/10.1145/3788910.3788914)
+- **A Generative AI Agent-Based Simulation for Electricity Market and Load Forecasting Game Strategy** — Proceedings of the 2025 International Conference on Digital Society and Intelligent Computing, 2025. [DOI](https://doi.org/10.1145/3788910.3788914)
   - 场景：电力市场与负荷预测博弈策略的多智能体仿真。
   - 方法：生成式 AI 智能体参与市场与预测博弈，研究策略交互对市场结果的影响。
   - 阅读重点：智能体行为是否经真实参与者校准；博弈设定与真实市场机制的对应程度。
 
-- **LLM-Augmented Multi-Agent System for Trading Behavior Modeling in Coupled Electricity-Carbon Markets** — IEEE 会议论文. [Paper](https://ieeexplore.ieee.org/document/11370553)
+- **LLM-Augmented Multi-Agent System for Trading Behavior Modeling in Coupled Electricity-Carbon Markets** — *Journal of Modern Power Systems and Clean Energy*, 2026. [DOI](https://doi.org/10.35833/MPCE.2025.000645)
   - 场景：电—碳耦合市场中的交易行为建模与策略形成。
   - 方法：LLM 增强多智能体系统，以受限理性学习更新信念并迭代调整交易预期与策略。
   - 阅读重点：与“LLM-CECM”的异同；耦合市场下报价行为是否经实证校准。
@@ -332,17 +332,17 @@ A curated reading list of AI in electricity markets, with large language models 
 
 | 年份标签 | 论文 | 来源 | 待核实内容 |
 | --- | --- | --- | --- |
-| 2024 | Large Language Model for Extreme Electricity Price Forecasting in the Australia Electricity Market | [IEEE IECON / DOI](https://doi.org/10.1109/IECON55916.2024.10906045) | 全文方法、数据和基线 |
-| 2025 | A Large Language Model-Based Agent for Automated Bidding Strategy Generation in Electricity Markets | [IEEE ICPIES / DOI](https://doi.org/10.1109/ICPIES65420.2025.11070004) | 全文方法、策略评价 |
-| 2025 | Large Language Model Based Data Augmentation for Peak Electricity Price Forecasting and Battery Energy Storage Arbitrage | [IEEE SMC official handbook](https://www.ieeesmc2025.org/files/content/SMC25-Handbook.pdf) | DOI、数据增强机制、套利实验 |
+| 2024 | Large Language Model for Extreme Electricity Price Forecasting in the Australia Electricity Market | [IEEE IECON 2024 / DOI](https://doi.org/10.1109/IECON55916.2024.10906045) | 全文方法、数据和基线 |
+| 2025 | A Large Language Model-Based Agent for Automated Bidding Strategy Generation in Electricity Markets | [IEEE ICPIES 2025 / DOI](https://doi.org/10.1109/ICPIES65420.2025.11070004) | 全文方法、策略评价 |
+| 2025 | Large Language Model Based Data Augmentation for Peak Electricity Price Forecasting and Battery Energy Storage Arbitrage | [IEEE SMC 2025 / DOI](https://doi.org/10.1109/SMC58881.2025.11342789) | 数据增强机制、套利实验 |
 | 2026 | LLM-CECM: A simulation framework for strategic generation behavior in coupled electricity-carbon markets | [Publisher page](https://www.sciencedirect.com/science/article/pii/S0960148126009651) | 在线发表日期、完整仿真设置与验证 |
-| 2025 | A Review of Large Language Models for Energy Systems: Applications, Challenges, and Future Prospects | [IEEE / DOI](https://ieeexplore.ieee.org/document/11168242) | 综述范围是否含电力市场专门小节；作为入口还是单列 |
-| 2025 | Virtual Power Plant Trading Strategy in the Electricity Market Based on Prompt-LLM & MAPPO | [Journal page](https://opaj.napstic.cn/periodicalArticle/0120260601343662) | 中文题录、期刊全名、实验与基线 |
-| 2025 | An In-Context LLM for PV-BESS Operations: Adaptive Day-Ahead Strategy Recommendation for Economic Optimization | [Semantic Scholar](https://www.semanticscholar.org/paper/7c44dece341958d0f4f2a2745832e945edbbb462) | 正式发表信息、是否属市场竞价或仅运行经济优化 |
-| 2025 | Modeling and optimization of virtual power plant energy market behavior based on news sentiment and natural semantic analysis | [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S2213138825005491) | 期刊名/DOI、LLM 具体角色、实验与基线 |
-| 2025 | A Semantic Risk-Aware Optimization Framework for Virtual Power Plant Dispatch Using Large Language Models | [MDPI Energies](https://www.mdpi.com/1996-1073/19/12/2820) | DOI、是否属市场调度还是纯运行优化、基线 |
-| 2025 | Large Language Model Applications in Power Systems: A Comprehensive Review and Outlook | [IEEE](https://ieeexplore.ieee.org/document/11417457) | 综述中电力市场章节占比；作为入口还是单列 |
-| 2025 | Integrating Multi-Agent Reinforcement Learning and Evolutionary Game Theory for Adaptive Virtual Bidding Strategies in Electricity Markets | [Semantic Scholar](https://www.semanticscholar.org/paper/efee1554cd91cc1e843ea73561d994c3ace62575) | 是否含 LLM 组件或纯 MARL；题录与日期 |
+| 2025 | A Review of Large Language Models for Energy Systems: Applications, Challenges, and Future Prospects | [IEEE Access / DOI](https://doi.org/10.1109/ACCESS.2025.3610994) | 综述范围是否含电力市场专门小节；作为入口还是单列 |
+| 2025 | Virtual Power Plant Trading Strategy in the Electricity Market Based on Prompt-LLM & MAPPO | [Journal page](https://opaj.napstic.cn/periodicalArticle/0120260601343662) | 中文题录、期刊全名、实验与基线（注意：与 Crossref 命中的 PowerCon DRL 交易策略非同一篇） |
+| 2025 | An In-Context LLM for PV-BESS Operations: Adaptive Day-Ahead Strategy Recommendation for Economic Optimization | [IEEE Access / DOI](https://doi.org/10.1109/ACCESS.2025.3638429) | 是否属市场竞价或仅运行经济优化 |
+| 2025 | Modeling and optimization of virtual power plant energy market behavior based on news sentiment and natural semantic analysis | [Sustainable Energy Tech. & Assess. / DOI](https://doi.org/10.1016/j.seta.2025.104718) | LLM 具体角色、实验与基线 |
+| 2026 | A Semantic Risk-Aware Optimization Framework for Virtual Power Plant Dispatch Using Large Language Models | [MDPI Energies / DOI](https://doi.org/10.3390/en19122820) | 是否属市场调度还是纯运行优化、基线 |
+| 2026 | Large Language Model Applications in Power Systems: A Comprehensive Review and Outlook | [J. Modern Power Systems & Clean Energy / DOI](https://doi.org/10.35833/MPCE.2025.000760) | 综述中电力市场章节占比；作为入口还是单列 |
+| 2026 | Integrating Multi-Agent Reinforcement Learning and Evolutionary Game Theory for Adaptive Virtual Bidding Strategies in Electricity Markets | [J. Power and Energy Engineering / DOI](https://doi.org/10.4236/jpee.2026.144001) | 是否含 LLM 组件或纯 MARL |
 
 ---
 
