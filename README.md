@@ -1,4 +1,4 @@
-# AI in electricity market
+# Papers-of-LLM-in-Electricity-Market
 
 > **English（this page）** | [简体中文](README.zh-CN.md)
 
