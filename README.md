@@ -157,15 +157,6 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：双智能体 LLM 结合遗传演化，迭代生成与选择竞价策略。
   - 阅读重点：遗传演化的选择压力是否由真实市场反馈驱动；策略优化的收敛性与过拟合风险。
 
-- **Agents are all you need: Elevating Trading Dynamics with Advanced Generative AI-Driven Conversational LLM Agents and Tools** — 2024 IEEE 9th International Conference for Convergence in Technology (I2CT), 2024. [DOI](https://doi.org/10.1109/I2CT61223.2024.10543356)
-  - 场景：对话式生成 AI 智能体与工具驱动的交易动态。
-  - 方法：用生成式 LLM 智能体 + 工具提升交易决策，研究对话式智能体的交易表现。
-  - 阅读重点：对话式智能体交易相对 RL 基线的增量；工具调用在交易中的可靠性。
-
-- **On the Role of Language Representations in Auto-Bidding: Findings and Implications** — arXiv, 2026. [Paper](https://arxiv.org/abs/2605.05833)
-  - 方法与结果：系统性检验“语言表征”在自动竞价中的作用，给出实证发现与启示。
-  - 阅读重点：这是直接回答“信息增益/增量归因”研究问题的关键工作，需精读其消融与对照设计。
-
 ---
 
 ## 问题三：市场机制与交易如何设计
@@ -262,12 +253,9 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：LLM 赋能的 ABM 仿真综述（被引约 550）；是“LLM+ABM”这一方法范式的总入口。
   - 阅读重点：作为本问题（Q4）的方法论背景综述；能源市场是其中一类应用场景。
 
-- **On the limits of agency in agent-based models** — 2024（Chopra et al.）。 [Semantic Scholar](https://www.semanticscholar.org/search?q=On%20the%20limits%20of%20agency%20in%20agent-based%20models)
-  - 方法：讨论 ABM 中智能体“能动性（agency）”的边界与局限（被引约 68）。
-  - 阅读重点：LLM 仿真智能体的行为可信度边界；与“行为校准”研究问题直接相关。
-
 - **Simulating financial market via large language model based agents** — arXiv, 2024. [Paper](https://arxiv.org/abs/2406.19966)
-  - 方法：用 LLM 智能体仿真金融市场（被引约 51）；电力市场仿真的方法论参照。
+  - ⚠️ 相邻领域（股票金融市场，非电力市场）；仅作 LLM 市场仿真的方法论参照。
+  - 方法：用 LLM 智能体仿真股票市场（被引约 51）。
   - 阅读重点：相邻领域（金融）的 LLM 市场仿真能否迁移到电力市场。
 
 ---
@@ -498,6 +486,7 @@ A curated reading list of AI in electricity markets, with large language models 
 | 2026 | A Semantic Risk-Aware Optimization Framework for Virtual Power Plant Dispatch Using Large Language Models | [MDPI Energies / DOI](https://doi.org/10.3390/en19122820) | 是否属市场调度还是纯运行优化、基线 |
 | 2026 | Large Language Model Applications in Power Systems: A Comprehensive Review and Outlook | [J. Modern Power Systems & Clean Energy / DOI](https://doi.org/10.35833/MPCE.2025.000760) | 综述中电力市场章节占比；作为入口还是单列 |
 | 2026 | Integrating Multi-Agent Reinforcement Learning and Evolutionary Game Theory for Adaptive Virtual Bidding Strategies in Electricity Markets | [J. Power and Energy Engineering / DOI](https://doi.org/10.4236/jpee.2026.144001) | 是否含 LLM 组件或纯 MARL |
+| 2024 | Agents are all you need: Elevating Trading Dynamics with Advanced Generative AI-Driven Conversational LLM Agents and Tools | [IEEE I2CT / DOI](https://doi.org/10.1109/I2CT61223.2024.10543356) | “Trading Dynamics”是否指电力/能源交易，摘要尚未核实 |
 
 ---
 
