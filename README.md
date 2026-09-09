@@ -1,8 +1,8 @@
-# LLM in electricity market
+# AI in electricity market
 
-A curated reading list of large language models in electricity markets, covering papers from **2024 onward**.
+A curated reading list of AI in electricity markets, with large language models (and generative / foundation models) as the primary focus and other AI methods (deep learning, reinforcement learning, time-series foundation models, agent-based / game theory) as comparison anchors. LLM papers cover **2024 onward**; non-LLM methods span **2020 onward** with earlier milestones.
 
-面向 **LLM＋电力市场** 的论文与资源清单，按**电力市场中的科学问题**组织：先说明每个问题在研究什么、为什么重要，再介绍该问题下的研究与 LLM 的作用。记录 LLM 的实际作用、研究场景及发表状态。
+面向 **AI＋电力市场** 的论文与资源清单。以 **LLM（及生成式／基础模型）** 为主体，其它 AI 方法（深度学习、强化学习、时序基础模型、多主体博弈仿真）作为**对照锚点**，用于凸显语言推理带来的增量。按**电力市场中的科学问题**组织：先说明每个问题在研究什么、为什么重要，再介绍该问题下的研究。LLM 论文收录 2024 起；非 LLM 方法收录 2020 起，早期仅保留里程碑。
 
 **更新日期：2026-09-09。当前为持续扩展的文献与资源清单，不是完整系统综述。** 论文结论为作者报告；部分条目基于摘要或公开版本整理，尚未逐篇复现。预印本与正式版本合并记录，待核实题录单列。
 
@@ -15,6 +15,7 @@ A curated reading list of large language models in electricity markets, covering
 - [问题四：市场如何建模、仿真与行为校准](#问题四市场如何建模仿真与行为校准)
 - [问题五：模型能否理解规则、政策与被评测](#问题五模型能否理解规则政策与被评测)
 - [支撑：时序基础模型与基线](#支撑时序基础模型与基线)
+- [对照：非 LLM 方法](#对照非-llm-方法)
 - [支撑：数据集、基准与工具](#支撑数据集基准与工具)
 - [待核实题录](#待核实题录)
 - [开放的研究空白](#开放的研究空白)
@@ -24,6 +25,8 @@ A curated reading list of large language models in electricity markets, covering
 ## 范围与科学问题
 
 优先收录直接涉及电价、竞价、储能套利、辅助服务、P2P 交易、市场仿真、规则和政策的 LLM 论文。普通负荷预测、潮流计算、纯调度和普通 Transformer 研究不自动纳入；时序基础模型单列，避免将架构相似性等同于语言推理能力。
+
+同时收录**非 LLM 方法**（深度学习预测、单/多主体强化学习竞价、时序基础模型、多主体博弈仿真、生成模型与可解释 ML）作为**对照锚点**——它们回答“没有语言推理时能做到多好”，是判断 LLM 是否真正带来增量、增量来自哪里的基准。非 LLM 方法集中在「对照：非 LLM 方法」一节，按方法类型组织，不以科学问题细分为主。
 
 电力市场的运行可以拆成一条因果链：**价格如何形成 → 参与者如何据此决策 → 机制如何协调这些决策 → 整个系统如何被建模与优化 → 规则与政策如何被理解和评估**。LLM 在这条链上的每一环都有不同角色。据此，本清单按以下五个科学问题组织：
 
@@ -239,6 +242,50 @@ A curated reading list of large language models in electricity markets, covering
 
 ---
 
+## 对照：非 LLM 方法
+
+以下工作不使用（或不以）语言模型为核心，而是以深度学习、强化学习、时序基础模型或博弈/多主体仿真等方法解决电力市场问题。它们作为 LLM 研究的**对照锚点**：判断 LLM 的增益是来自“语言/语义理解”，还是来自更成熟的数值方法早已能做好的部分。2020 后为主，早期仅保留里程碑式综述/基准。
+
+### 综述与基准（入口）
+
+- **Forecasting day-ahead electricity prices: A review of state-of-the-art algorithms, best practices and an open-access benchmark** — *Applied Energy*, 293, 116983, 2021. [Paper](https://arxiv.org/abs/2008.08004)
+  - 日前电价预测的算法综述与开放基准；为后续 DL/LLM 预测工作提供数据集与最佳实践对照。
+- **Reinforcement learning in deregulated energy market: A comprehensive review** — *Applied Energy*, 329, 120212, 2023. [Paper](https://doi.org/10.1016/j.apenergy.2022.120212)
+  - 开放能源市场中 RL（含 DRL/MARL）的应用综述；覆盖竞价、套利与市场仿真，是 RL 对照的入口。
+- **Multi-agent systems in Peer-to-Peer energy trading: A comprehensive survey** — *Engineering Applications of Artificial Intelligence*, 132, 2024. [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0952197624000058)
+  - P2P 能源交易中的多智能体系统综述；与 LLM 驱动的 P2P 方法形成方法谱系对照。
+- **Machine learning applications for electricity market agent-based models: A systematic literature review** — arXiv, 2022. [Paper](https://arxiv.org/abs/2206.02196)
+  - 电力市场 ABM 中机器学习（含 RL）应用的系统综述；是“市场建模与行为仿真”问题的非 LLM 对照。
+- **Graph Reinforcement Learning for Power Grids: A Comprehensive Survey** — arXiv, 2024. [Paper](https://arxiv.org/abs/2407.04522)
+  - 电网图 RL 综述；提供跨电力系统与市场的 RL 方法全景。
+
+### 深度学习电价预测（非 LLM）
+
+- **Forecasting day-ahead electricity prices**（同上综述）中的 DL 基线（DNN/RNN/CNN）是最常用的非 LLM 预测对照。
+- **A comparison of modern deep neural network architectures for energy spot price forecasting** — 比较 DNN/RNN/CNN 等架构在现货电价预测上的表现；作为“纯数值 DL 能做到什么”的对照。
+
+### 强化学习竞价与储能
+
+- **Learn to Bid: Deep Reinforcement Learning with Transformer for Energy Storage Bidding in Energy and Contingency Reserve Markets** — NeurIPS 2022（Climate Change AI）。 [Paper](https://www.climatechange.ai/papers/neurips2022/62)
+  - 储能联合能量/备用市场的 DRL+Transformer 竞价；是“不含语言的 Transformer+RL”对照。
+- **Deep Reinforcement Learning for Wind and Energy Storage Coordination in Wholesale Energy and Ancillary Service Markets** — arXiv, 2022. [Paper](https://arxiv.org/abs/2212.13368)
+  - 风+储能联合参与能量与辅助服务市场的 DRL 调度与竞价。
+- **Reinforcement Learning-Based Bi-Level strategic bidding model of Gas-fired unit in integrated electricity and natural gas markets preventing market manipulation** — *Applied Energy*, 336, 120822, 2023. [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0306261923001770)
+  - 气电机的双层策略竞价，防市场操纵；作为传统发电企业竞价的 RL 对照。
+- **Proximal policy optimization based reinforcement learning for joint bidding in energy and frequency regulation markets** — Monash（期刊版）。 [Record](https://research.monash.edu/en/publications/proximal-policy-optimization-based-reinforcement-learning-for-joi)
+  - PPO 用于能量与调频市场联合竞价，是类 FCAS 场景的非 LLM RL 对照。
+
+### 多主体强化学习与 P2P
+
+- **Renewable energy integration and microgrid energy trading using multi-agent deep reinforcement learning** — *Applied Energy*, 2022. [Paper](https://www.sciencedirect.com/science/article/pii/S0306261922005256)
+  - MADRL 用于微网能量交易；是 LLM-MARL P2P 方法的纯 RL 对照。
+- **Multi-agent deep deterministic policy gradient algorithm for peer-to-peer energy trading considering distribution network constraints** — *Applied Energy*, 2022. [Paper](https://www.sciencedirect.com/science/article/pii/S0306261922005025)
+  - 考虑配网约束的 P2P 交易 MADDPG；对应 LLM-Enhanced P2P 方法的约束处理对照。
+- **Multi-agent deep reinforcement learning for efficient multi-timescale bidding of a hybrid power plant in day-ahead and real-time markets** — *Applied Energy*, 2022. [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0306261922004603)
+  - 混合电源日前+实时多时间尺度竞价的 MADRL。
+
+---
+
 ## 支撑：数据集、基准与工具
 
 补充可复现的数据集、评估基准、工具包与交易仿真环境；用于复现论文、自建基线和训练/评测交易智能体。
@@ -318,8 +365,9 @@ A curated reading list of large language models in electricity markets, covering
 3. **预测到收益**：预测误差改善能否带来扣除约束和成本后的交易收益改善？
 4. **规则迁移**：市场规则改变后，Agent 能否正确更新模型约束，并保持策略有效？
 5. **行为校准**：LLM 仿真产生的报价分布、价格和参与者响应是否符合实际？
+6. **增量归因**：在同等预算与数据下，LLM 相对成熟 RL/DL/时序基线的增量究竟来自“语言语义理解”，还是来自更强的表征或更多算力？这条是扩展到 AI 视角后最核心、却最少被论文直接回答的问题。
 
-建议精读起点：报价行为与情绪预测、NSW-EPNews、极端日分类、FCAS 自动竞价、P2P 专家工作流、MSS-Agent。
+建议精读起点：报价行为与情绪预测、NSW-EPNews、极端日分类、FCAS 自动竞价、P2P 专家工作流、MSS-Agent；对照侧从《RL in deregulated energy market》与《Forecasting day-ahead electricity prices》两篇综述入手。
 
 ## Contributing
 
@@ -327,11 +375,11 @@ A curated reading list of large language models in electricity markets, covering
 
 - 原始标题、作者、首次公开年份和正式发表信息；
 - DOI、出版社或作者论文链接；
-- 所属科学问题、电力市场任务、LLM 实际作用、市场／数据、基线和主要结论；
+- 所述方法类别（LLM / DL / RL / 时序基础模型 / 博弈仿真）、所属科学问题、电力市场任务、LLM 实际作用、市场／数据、基线和主要结论；
 - 代码及数据链接，并区分完整实现、部分代码、补充材料和需申请资源。
 
 同一论文的预印本和正式版本合并记录。优先引用出版社、作者公开版本和机构资料；未核实内容放入待核实列表。仅提供论文链接，不重新分发论文全文。
 
 ## Acknowledgements
 
-文献库的组织形式参考 [awesome_energy_LLM](https://github.com/chenweilong915/awesome_energy_LLM)。本文献库按电力市场中的科学问题独立分类和整理，检索覆盖 arXiv、IEEE Xplore、Elsevier（ScienceDirect）等多个来源，持续通过中文文献、会议论文及前后向引文检索扩展。
+文献库的组织形式参考 [awesome_energy_LLM](https://github.com/chenweilong915/awesome_energy_LLM)。本文献库以 LLM／生成式为主体、以其它 AI 方法为对照，按电力市场中的科学问题独立分类和整理，检索覆盖 arXiv、IEEE Xplore、Elsevier（ScienceDirect）等多个来源，持续通过中文文献、会议论文及前后向引文检索扩展。
