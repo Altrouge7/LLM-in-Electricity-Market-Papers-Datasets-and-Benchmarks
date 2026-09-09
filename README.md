@@ -90,6 +90,10 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：将负荷、可再生能源、天气和近期价格统计量转成提示，判断次日是否出现价格尖峰。
   - 结果：作者报告少样本条件下可超过 SVM、XGBoost；任务是极端日分类，不是完整价格轨迹预测。
 
+- **Reasoning-enhanced probabilistic electricity price forecasting using parameter-efficient large language models** — *Applied Energy*, 2026. [DOI](https://doi.org/10.1016/j.apenergy.2026.128712)
+  - 方法：用参数高效（PEFT）LLM 增强推理，做概率电价预测。
+  - 阅读重点：推理增强 vs 纯数值基线的概率校准；参数高效微调带来的成本—增益权衡。
+
 - **Electricity Market Price Forecast via LLM-based Sentiment Analysis and TimeXer** — 2025 7th International Conference on Data-driven Optimization of Complex Systems (DOCS), 2025. [DOI](https://doi.org/10.1109/DOCS67533.2025.11200590)
   - 方法：LLM 提取市场情绪作为特征，结合 TimeXer 时序模型进行电价预测。
   - 阅读重点：LLM 情绪特征相对传统文本特征的信息增益；与“报价行为与情绪预测”一条的对照组设计。
@@ -132,6 +136,11 @@ A curated reading list of AI in electricity markets, with large language models 
   - 场景：电力市场自动竞价策略优化。
   - 方法：双智能体 LLM 结合遗传演化，迭代生成与选择竞价策略。
   - 阅读重点：遗传演化的选择压力是否由真实市场反馈驱动；策略优化的收敛性与过拟合风险。
+
+- **Agents are all you need: Elevating Trading Dynamics with Advanced Generative AI-Driven Conversational LLM Agents and Tools** — 2024 IEEE 9th International Conference for Convergence in Technology (I2CT), 2024. [DOI](https://doi.org/10.1109/I2CT61223.2024.10543356)
+  - 场景：对话式生成 AI 智能体与工具驱动的交易动态。
+  - 方法：用生成式 LLM 智能体 + 工具提升交易决策，研究对话式智能体的交易表现。
+  - 阅读重点：对话式智能体交易相对 RL 基线的增量；工具调用在交易中的可靠性。
 
 ---
 
@@ -296,6 +305,25 @@ A curated reading list of AI in electricity markets, with large language models 
 - **A comparison of modern deep neural network architectures for energy spot price forecasting** — 比较 DNN/RNN/CNN 等架构在现货电价预测上的表现；作为“纯数值 DL 能做到什么”的对照。
 
 ### 强化学习竞价与储能
+
+以下为 RL 竞价方向的里程碑式代表作（多被引数百），是判断任何 LLM 竞价方法增量的硬基准：
+
+- **Deep Reinforcement Learning for Strategic Bidding in Electricity Markets** — *IEEE Transactions on Smart Grid*, 11(2), 2020. [DOI](https://doi.org/10.1109/TSG.2019.2936142)
+  - DRL 用于战略竞价的奠基工作（被引约 389），是 RL 竞价对照的必引基线。
+- **Deep Reinforcement Learning for Joint Bidding and Pricing of Load Serving Entity** — *IEEE Transactions on Smart Grid*, 10(6), 2019. [DOI](https://doi.org/10.1109/TSG.2019.2903756)
+  - 负荷服务商联合竞价与定价的 DRL（被引约 143）。
+- **Approximating Nash Equilibrium in Day-ahead Electricity Market Bidding with Multi-agent Deep Reinforcement Learning** — *Journal of Modern Power Systems and Clean Energy*, 9(3), 2021. [DOI](https://doi.org/10.35833/MPCE.2020.000502)
+  - MADRL 逼近日前市场竞价的纳什均衡（被引约 140）；是“多主体竞价均衡”的对照。
+- **Multi-Agent Deep Reinforcement Learning for Simulating Centralized Double-Sided Auction Electricity Market** — *IEEE Transactions on Power Systems*, 2025. [DOI](https://doi.org/10.1109/TPWRS.2024.3404472)
+  - MADRL 仿真集中式双边拍卖市场；是“市场仿真”的非 LLM 对照。
+- **Optimizing bidding strategy in electricity market based on graph convolutional neural network and deep reinforcement learning** — *Applied Energy*, 379, 2025. [DOI](https://doi.org/10.1016/j.apenergy.2024.124978)
+  - 图卷积 + DRL 竞价；结合网络结构与策略优化。
+- **Intelligent strategic bidding in competitive electricity markets using multi-agent simulation and deep reinforcement learning** — *Applied Soft Computing*, 2024. [DOI](https://doi.org/10.1016/j.asoc.2024.111235)
+  - 多智能体仿真 + DRL 的战略竞价。
+- **Energy storage arbitrage in two-settlement markets: A transformer-based approach** — *Electric Power Systems Research*, 2024. [DOI](https://doi.org/10.1016/j.epsr.2024.110755)
+  - Transformer 储能套利（两结算市场）；“不含语言的 Transformer”套利对照。
+- **Interpretable Hybrid Experimental Learning for Trading Behavior Modeling in Electricity Market** — *IEEE Transactions on Power Systems*, 38(4), 2023. [DOI](https://doi.org/10.1109/TPWRS.2022.3173654)
+  - 可解释交易行为建模（不依赖 LLM）。
 
 - **Learn to Bid: Deep Reinforcement Learning with Transformer for Energy Storage Bidding in Energy and Contingency Reserve Markets** — NeurIPS 2022（Climate Change AI）。 [Paper](https://www.climatechange.ai/papers/neurips2022/62)
   - 储能联合能量/备用市场的 DRL+Transformer 竞价；是“不含语言的 Transformer+RL”对照。
