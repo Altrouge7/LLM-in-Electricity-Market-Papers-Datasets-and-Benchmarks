@@ -106,6 +106,26 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：LLM 用于电价数据的智能预处理与预测。
   - 阅读重点：预处理（清洗/补齐/特征）环节与预测环节各自的增益；数据质量差时 LLM 的鲁棒性。
 
+- **RIS-LLM: Reasoning-informed semantic modeling of electricity market price dynamics** — *Advanced Engineering Informatics*, 2026. [DOI](https://doi.org/10.1016/j.aei.2026.104949)
+  - 方法：将推理信息融入电价动态的语义建模。
+  - 阅读重点：推理增强相对纯特征/纯数值的增量；语义建模的泛化边界。
+
+- **LLM Agent-Driven Dynamic Prediction for Day-Ahead Electricity Prices** — IEEE 会议论文, 2026.
+  - 方法：LLM 智能体驱动的日前电价动态预测。
+  - 阅读重点：LLM 作为“预测智能体”而非特征器的定位差异。
+
+- **A large language model-based reprogramming method for electricity price spread prediction** — *Journal of Renewable and Sustainable Energy*, 2026.
+  - 方法：用 LLM 重编程（reprogramming）做电价价差预测。
+  - 阅读重点：价差（而非电价水平）预测的套利导向；reprogramming 的迁移能力。
+
+- **Probabilistic Forecasting of Real-Time Electricity Market Signals via Interpretable Generative AI** — arXiv, 2024. [Paper](https://arxiv.org/abs/2403.05743)
+  - 方法：可解释生成式 AI 对实时市场信号做概率预测。
+  - 阅读重点：概率校准与可解释性；实时 vs 日前信号的区别。
+
+- **Assessing time series foundation models for probabilistic electricity price forecasting: Toward a unified benchmark** — *Energies*, 2025. [DOI](https://doi.org/10.3390/en18236269)
+  - 方法：统一基准评估时序基础模型的概率电价预测。
+  - 阅读重点：与“Benchmarking Pre-Trained Time Series Models”一条互补；概率预测评估的统一口径。
+
 ---
 
 ## 问题二：市场参与者如何竞价与决策
@@ -141,6 +161,10 @@ A curated reading list of AI in electricity markets, with large language models 
   - 场景：对话式生成 AI 智能体与工具驱动的交易动态。
   - 方法：用生成式 LLM 智能体 + 工具提升交易决策，研究对话式智能体的交易表现。
   - 阅读重点：对话式智能体交易相对 RL 基线的增量；工具调用在交易中的可靠性。
+
+- **On the Role of Language Representations in Auto-Bidding: Findings and Implications** — arXiv, 2026. [Paper](https://arxiv.org/abs/2605.05833)
+  - 方法与结果：系统性检验“语言表征”在自动竞价中的作用，给出实证发现与启示。
+  - 阅读重点：这是直接回答“信息增益/增量归因”研究问题的关键工作，需精读其消融与对照设计。
 
 ---
 
@@ -188,10 +212,20 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：研究独立学习智能体在重复互动中是否自发产生默示合谋，及其对价格与竞争的影响。
   - 阅读重点：LLM/RL 竞价智能体的竞争合规性；“个体理性→整体合谋”的机制警示，是本清单最值得跟踪的新空白。
 
-- **Draining the Energy Commons: Self-Defeating Over-Appropriation as a Coordination Failure in Agentic LLM Collectives** — arXiv, 2026. [Paper](https://arxiv.org/abs/2607.22188)
+- **Draining the Energy Commons: Self-Defeating Over-Approximation as a Coordination Failure in Agentic LLM Collectives** — arXiv, 2026. [Paper](https://arxiv.org/abs/2607.22188)
   - 场景：共享可再生能源公地（commons）中 LLM 产消者集体的协调失败。
   - 方法：同族 GPT/Gemini/Grok 智能体以产消者身份最大化自身目标，观察对共享资源的过度占用。
   - 阅读重点：LLM 集体决策的公地悲剧；与 P2P 公平性机制如何互补。
+
+- **Interactive learning-implementation of ChatGPT and reinforcement learning in local energy trading** — 2024 IEEE 34th Australasian Universities Power Engineering Conference (AUPEC), 2024. [DOI](https://doi.org/10.1109/AUPEC62273.2024.10807616)
+  - 场景：ChatGPT 与 RL 交互式学习在本地能源交易中的应用。
+  - 方法：将对话式 LLM 与 RL 结合实现本地产消者交易决策。
+  - 阅读重点：LLM 与 RL 的交互式学习分工；对话指导是否真正改善策略。
+
+- **An explainable equity-aware P2P energy trading framework for socio-economically diverse microgrid** — arXiv, 2025. [Paper](https://arxiv.org/abs/2507.18738)
+  - 场景：面向社会经济异质微网的可解释权益（equity）感知 P2P 交易框架。
+  - 方法：在 P2P 交易中显式建模并解释公平/权益，处理参与者异质性。
+  - 阅读重点：公平指标的可解释性；与 Equity-Aware P2P 一条的定位差异。
 
 ---
 
@@ -223,6 +257,18 @@ A curated reading list of AI in electricity markets, with large language models 
   - 场景：能源运营中的消费者/参与者行为建模，含低频高影响事件下的行为异质性。
   - 方法：用生成式智能体补充/替代传统行为模型，研究其在运营决策中的价值与局限。
   - 阅读重点：生成式智能体对真实参与者的行为校准程度；与“Power Dispatch and Auction”一条同组、但更偏运营侧。
+
+- **Large language models empowered agent-based modeling and simulation: A survey and perspectives** — *Humanities and Social Sciences Communications*, 2024. [DOI](https://doi.org/10.1057/s41599-024-03611-3)
+  - 方法：LLM 赋能的 ABM 仿真综述（被引约 550）；是“LLM+ABM”这一方法范式的总入口。
+  - 阅读重点：作为本问题（Q4）的方法论背景综述；能源市场是其中一类应用场景。
+
+- **On the limits of agency in agent-based models** — 2024（Chopra et al.）。 [Semantic Scholar](https://www.semanticscholar.org/search?q=On%20the%20limits%20of%20agency%20in%20agent-based%20models)
+  - 方法：讨论 ABM 中智能体“能动性（agency）”的边界与局限（被引约 68）。
+  - 阅读重点：LLM 仿真智能体的行为可信度边界；与“行为校准”研究问题直接相关。
+
+- **Simulating financial market via large language model based agents** — arXiv, 2024. [Paper](https://arxiv.org/abs/2406.19966)
+  - 方法：用 LLM 智能体仿真金融市场（被引约 51）；电力市场仿真的方法论参照。
+  - 阅读重点：相邻领域（金融）的 LLM 市场仿真能否迁移到电力市场。
 
 ---
 
@@ -259,6 +305,14 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：构建面向调度决策的评测基准，检验 LLM 的指令遵循与专业决策能力。
   - 阅读重点：偏调度而非纯市场交易，可作为“规则理解能力”的补充证据而非交易收益证据。
 
+- **A Benchmark for Document Understanding of Large Language Models in the Field of Electric Power** — Springer（International Symposium on Artificial Intelligence）, 2025.
+  - 方法：面向电力领域文档理解的 LLM 基准。
+  - 阅读重点：文档理解能力是否覆盖市场规则/结算单等专业文本。
+
+- **WeQA: A benchmark for retrieval augmented generation in wind energy domain** — Workshop on NLP for Positive Impact (NLP4PI), 2025. [DOI](https://doi.org/10.18653/v1/2025.nlp4pi-1.20)
+  - 方法：风能领域 RAG 评测基准；能源领域 RAG 评测的参考（非纯电力市场）。
+  - 阅读重点：能源 RAG 的引用可靠性评测范式，可迁移到市场法规 RAG。
+
 ---
 
 ## 支撑：时序基础模型与基线
@@ -279,6 +333,17 @@ A curated reading list of AI in electricity markets, with large language models 
   - 直接对应“预测到收益”研究问题；区分统计精度与套利收益。
 - **A systematic review of transformers and large language models in the energy sector: towards agentic digital twins** — *Applied Energy*, 2025. [Paper](https://doi.org/10.1016/j.apenergy.2025.126670)
   - 能源领域 Transformer 与 LLM 系统综述，涵盖市场与智能体方向；用于建立领域全景与入口。
+
+### LLM 在能源/电力领域的综述（全景入口）
+
+- **Exploring the capabilities and limitations of large language models in the electric energy sector** — *Joule*, 2024. [DOI](https://doi.org/10.1016/j.joule.2024.05.009)
+  - 系统刻画 LLM 在电力能源领域的能力与局限（被引约 202）；是理解“LLM 到底能/不能做什么”的必读入口。
+- **Review of LLMs applications in electrical power & energy systems** — *IEEE Access*, 2025. [DOI](https://doi.org/10.1109/ACCESS.2025.3599922)
+  - 电力与能源系统中 LLM 应用综述（被引约 25）。
+- **A comprehensive review on the application of large language models in power systems** — *IEEE Access*, 2025. [DOI](https://doi.org/10.1109/ACCESS.2025.3637226)
+  - 电力系统 LLM 应用综合综述。
+- **Opportunities of applying Large Language Models in building energy sector** — *Renewable and Sustainable Energy Reviews*, 2025. [DOI](https://doi.org/10.1016/j.rser.2025.115558)
+  - 建筑能源领域 LLM 机会（被引约 68）；偏建筑，但提供相邻领域迁移视角。
 
 ---
 
@@ -320,6 +385,16 @@ A curated reading list of AI in electricity markets, with large language models 
   - 图卷积 + DRL 竞价；结合网络结构与策略优化。
 - **Intelligent strategic bidding in competitive electricity markets using multi-agent simulation and deep reinforcement learning** — *Applied Soft Computing*, 2024. [DOI](https://doi.org/10.1016/j.asoc.2024.111235)
   - 多智能体仿真 + DRL 的战略竞价。
+- **A strategic day-ahead bidding strategy and operation for battery energy storage system by reinforcement learning** — *Electric Power Systems Research*, 196, 2021. [DOI](https://doi.org/10.1016/j.epsr.2021.107229)
+  - BESS 日前竞价与运行的 RL 奠基工作（被引约 71）；储能套利竞价的必引对照。
+- **Multi-market bidding behavior analysis of energy storage system based on inverse reinforcement learning** — *IEEE Transactions on Power Systems*, 2022. [DOI](https://doi.org/10.1109/TPWRS.2022.3150518)
+  - 逆强化学习分析储能多市场竞价行为（被引约 53）。
+- **Temporal-aware deep reinforcement learning for energy storage bidding in energy and contingency reserve markets** — *IEEE Transactions on Energy Markets, Policy and Regulation*, 2024. [DOI](https://doi.org/10.1109/TEMPR.2024.3372656)
+  - 时序感知 DRL 储能联合能量/备用竞价。
+- **Attentive convolutional deep reinforcement learning for optimizing solar-storage systems in real-time electricity markets** — *IEEE Transactions on Industrial Informatics*, 2024. [DOI](https://doi.org/10.1109/TII.2024.3352229)
+  - 注意力卷积 DRL 优化光储实时市场参与。
+- **Multi-agent deep reinforcement learning-based autonomous decision-making framework for community virtual power plants** — *Applied Energy*, 2024. [DOI](https://doi.org/10.1016/j.apenergy.2024.122813)
+  - 社区虚拟电厂自主决策的 MADRL 框架（被引约 55）。
 - **Energy storage arbitrage in two-settlement markets: A transformer-based approach** — *Electric Power Systems Research*, 2024. [DOI](https://doi.org/10.1016/j.epsr.2024.110755)
   - Transformer 储能套利（两结算市场）；“不含语言的 Transformer”套利对照。
 - **Interpretable Hybrid Experimental Learning for Trading Behavior Modeling in Electricity Market** — *IEEE Transactions on Power Systems*, 38(4), 2023. [DOI](https://doi.org/10.1109/TPWRS.2022.3173654)
@@ -348,6 +423,21 @@ A curated reading list of AI in electricity markets, with large language models 
   - 考虑配网约束的 P2P 交易 MADDPG；对应 LLM-Enhanced P2P 方法的约束处理对照。
 - **Multi-agent deep reinforcement learning for efficient multi-timescale bidding of a hybrid power plant in day-ahead and real-time markets** — *Applied Energy*, 2022. [Paper](https://www.sciencedirect.com/science/article/abs/pii/S0306261922004603)
   - 混合电源日前+实时多时间尺度竞价的 MADRL。
+- **Indirect customer-to-customer energy trading with reinforcement learning** — *IEEE Transactions on Smart Grid*, 2019. [DOI](https://doi.org/10.1109/TSG.2018.2857449)
+  - 间接 C2C 能源交易的 RL（被引约 206），是本地能源市场 RL 的奠基工作。
+- **Multi-agent deep reinforcement learning for coordinated energy trading and flexibility services provision in local electricity markets** — *IEEE Transactions on Smart Grid*, 2023. [DOI](https://doi.org/10.1109/TSG.2022.3149266)
+  - MADRL 协调本地电力市场的能源交易与灵活性服务（被引约 140）。
+- **A scalable privacy-preserving multi-agent deep reinforcement learning approach for large-scale peer-to-peer transactive energy trading** — *IEEE Transactions on Smart Grid*, 2021. [DOI](https://doi.org/10.1109/TSG.2021.3103917)
+  - 大规模 P2P 跨能源交易的隐私保护 MADRL（被引约 211）。
+- **Reinforcement learning-driven local transactive energy market for distributed energy resources** — *Energy and AI*, 2022. [Paper](https://www.sciencedirect.com/science/article/pii/S2666546822000197)
+  - 面向分布式能源的本地跨能源市场的 RL。
+
+### 市场力评估与计算市场仿真
+
+- **A reinforcement learning model to assess market power under auction-based energy pricing** — *IEEE Transactions on Power Systems*, 22(1), 2007. [DOI](https://doi.org/10.1109/TPWRS.2006.888977)
+  - RL 评估拍卖定价下市场力的奠基工作（被引约 196）；是“市场力/竞争动态”问题的经典对照。
+- **An Adaptive Q-Learning Algorithm Developed for Agent-Based Computational Modeling of Electricity Market** — *IEEE Transactions on Systems, Man, and Cybernetics, Part C*, 40(5), 2010. [DOI](https://doi.org/10.1109/TSMCC.2010.2044174)
+  - 自适应 Q-learning 用于电力市场 ABM 计算建模（被引约 125）。
 
 ---
 
