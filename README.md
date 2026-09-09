@@ -174,7 +174,18 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：将 LLM 嵌入 P2P 能源管理，用约束/护栏机制保证系统在异常下的韧性。
   - 阅读重点：护栏机制对 LLM 错误输出的约束效果；韧性如何量化。
 
+- **AI agents in Algorithmic Electricity Markets: On the Emergence of Tacit Collusion** — arXiv, 2026. [Paper](https://arxiv.org/abs/2608.26896)
+  - 场景：学习型竞价智能体普及后，寡头电力市场的算法化与默示合谋风险。
+  - 方法：研究独立学习智能体在重复互动中是否自发产生默示合谋，及其对价格与竞争的影响。
+  - 阅读重点：LLM/RL 竞价智能体的竞争合规性；“个体理性→整体合谋”的机制警示，是本清单最值得跟踪的新空白。
+
+- **Draining the Energy Commons: Self-Defeating Over-Appropriation as a Coordination Failure in Agentic LLM Collectives** — arXiv, 2026. [Paper](https://arxiv.org/abs/2607.22188)
+  - 场景：共享可再生能源公地（commons）中 LLM 产消者集体的协调失败。
+  - 方法：同族 GPT/Gemini/Grok 智能体以产消者身份最大化自身目标，观察对共享资源的过度占用。
+  - 阅读重点：LLM 集体决策的公地悲剧；与 P2P 公平性机制如何互补。
+
 ---
+
 
 ## 问题四：市场如何建模、仿真与行为校准
 
@@ -199,6 +210,11 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：LLM 增强多智能体系统，以受限理性学习更新信念并迭代调整交易预期与策略。
   - 阅读重点：与“LLM-CECM”的异同；耦合市场下报价行为是否经实证校准。
 
+- **Behavioral Generative Agents for Energy Operations** — arXiv, 2025. [Paper](https://arxiv.org/abs/2506.12664)
+  - 场景：能源运营中的消费者/参与者行为建模，含低频高影响事件下的行为异质性。
+  - 方法：用生成式智能体补充/替代传统行为模型，研究其在运营决策中的价值与局限。
+  - 阅读重点：生成式智能体对真实参与者的行为校准程度；与“Power Dispatch and Auction”一条同组、但更偏运营侧。
+
 ---
 
 ## 问题五：模型能否理解规则、政策与被评测
@@ -218,6 +234,21 @@ A curated reading list of AI in electricity markets, with large language models 
   - 场景：面向欧盟电力市场法规的可信检索增强生成（RAG）。
   - 方法：构建 RAG 系统以回答法规文本，关注可信性与引用可靠性。
   - 阅读重点：法规问答的准确性与幻觉风险；能否支撑规则变更后的决策迁移问题。
+
+- **ElectriQ: A Benchmark for Assessing the Response Capability of Large Language Models in Power Marketing** — arXiv, 2025. [Paper](https://arxiv.org/abs/2507.22911)
+  - 场景：电力营销（EPM）场景下的 LLM 响应能力评测，覆盖跨场景长对话与政策/规则知识。
+  - 方法：构建电力营销专属问答/对话评测集，检验 LLM 对规则、电价与客户咨询的应对。
+  - 阅读重点：与 ELM-Bench 的定位差异；营销场景评测是否触及真实交易决策。
+
+- **How Do Tool-Augmented LLM Agents Perform on Real-World Energy Analytics Tasks?** — arXiv, 2026. [Paper](https://arxiv.org/abs/2606.26346)
+  - 场景：能源领域的实时数据检索、法规与市场知识、多步定量推理评测。
+  - 方法：实证评测工具增强 LLM 智能体在真实能源分析任务上的表现，弥补“静态知识问答”之外的空白。
+  - 阅读重点：工具调用、实时数据与多步推理的可靠性；与 EnergyAgentBench 的互补关系。
+
+- **ElecBench: A Power Dispatch Evaluation Benchmark for Large Language Models** — arXiv, 2024. [Paper](https://arxiv.org/abs/2407.05365)
+  - 场景：电力调度（含市场动态）场景下的 LLM 评测。
+  - 方法：构建面向调度决策的评测基准，检验 LLM 的指令遵循与专业决策能力。
+  - 阅读重点：偏调度而非纯市场交易，可作为“规则理解能力”的补充证据而非交易收益证据。
 
 ---
 
@@ -274,6 +305,12 @@ A curated reading list of AI in electricity markets, with large language models 
   - 气电机的双层策略竞价，防市场操纵；作为传统发电企业竞价的 RL 对照。
 - **Proximal policy optimization based reinforcement learning for joint bidding in energy and frequency regulation markets** — Monash（期刊版）。 [Record](https://research.monash.edu/en/publications/proximal-policy-optimization-based-reinforcement-learning-for-joi)
   - PPO 用于能量与调频市场联合竞价，是类 FCAS 场景的非 LLM RL 对照。
+- **MARS-DA: A Hierarchical Reinforcement Learning Framework for Risk-Aware Multi-Agent Bidding in Power Grids** — arXiv, 2026. [Paper](https://arxiv.org/abs/2605.03142)
+  - 面向可再生能源波动下日前/实时市场价差的风险感知多主体竞价；是“风险管理型竞价”的非 LLM 对照。
+- **A Dual-Positive Monotone Parameterization for Multi-Segment Bids and a Validity Assessment Framework for Reinforcement Learning Agent-based Simulation of Electricity Markets** — arXiv, 2026. [Paper](https://arxiv.org/abs/2604.10252)
+  - RL-ABS 中多段单调报价的合法参数化与有效性评估；是市场机制分析用 RL 仿真的方法论对照。
+- **Evaluation of Electricity Market Clearing Mechanisms via Reinforcement Learning: Prices, Remuneration and Competitive Dynamics** — arXiv, 2026. [Paper](https://arxiv.org/abs/2602.01392)
+  - 用 RL 智能体评估 Pay-as-Clear 等出清机制的价格、报酬与竞争动态；是“机制设计”问题的非 LLM 对照。
 
 ### 多主体强化学习与 P2P
 
@@ -354,7 +391,7 @@ A curated reading list of AI in electricity markets, with large language models 
 | --- | --- | --- |
 | 价格形成与预测 | 信息增益、事件时效 | 缺乏跨市场统一的“文本→价格”基准；负面结果记录不足 |
 | 参与者竞价与决策 | 预测到收益、规则迁移 | LLM-native 竞价环境稀缺；决策收益多以仿真而非真实市场验证 |
-| 市场机制与交易设计 | 公平性与经济激励的权衡 | 公平性评价的稳定性和可复现性不足 |
+| 市场机制与交易设计 | 公平性与经济激励的权衡 | 公平性评价的稳定性不足；LLM/学习智能体的默示合谋风险刚被提出、尚缺系统性评估 |
 | 市场建模与仿真 | 行为校准 | LLM 仿真产生的报价分布/价格鲜有对照真实数据校准 |
 | 规则、政策与评测 | 专业能力 vs 交易收益 | 问答得分与实际交易收益之间的鸿沟未被量化 |
 
@@ -366,6 +403,7 @@ A curated reading list of AI in electricity markets, with large language models 
 4. **规则迁移**：市场规则改变后，Agent 能否正确更新模型约束，并保持策略有效？
 5. **行为校准**：LLM 仿真产生的报价分布、价格和参与者响应是否符合实际？
 6. **增量归因**：在同等预算与数据下，LLM 相对成熟 RL/DL/时序基线的增量究竟来自“语言语义理解”，还是来自更强的表征或更多算力？这条是扩展到 AI 视角后最核心、却最少被论文直接回答的问题。
+7. **默示合谋**：在寡头、重复互动的算法电力市场中，独立学习的 LLM/RL 竞价智能体是否会自发形成默示合谋？机制设计如何抵御这一风险？
 
 建议精读起点：报价行为与情绪预测、NSW-EPNews、极端日分类、FCAS 自动竞价、P2P 专家工作流、MSS-Agent；对照侧从《RL in deregulated energy market》与《Forecasting day-ahead electricity prices》两篇综述入手。
 
