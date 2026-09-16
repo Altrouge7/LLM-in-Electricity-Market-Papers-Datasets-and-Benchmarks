@@ -1,4 +1,4 @@
-# AI in electricity market
+# Electricity-Market LLM papers, datasets and benchmark
 
 > [**English**](README.md) | **简体中文（本页）**
 
