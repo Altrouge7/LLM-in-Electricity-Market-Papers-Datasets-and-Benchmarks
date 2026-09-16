@@ -4,7 +4,9 @@
 
 A curated reading list of AI in electricity markets, with large language models (and generative / foundation models) as the primary focus and other AI methods (deep learning, reinforcement learning, time-series foundation models, agent-based / game theory) as comparison anchors. LLM papers cover **2024 onward**; non-LLM methods span **2020 onward** with earlier milestones.
 
-**Last updated: 2026-09-09. This is a continuously growing literature and resource list, not a complete systematic review.** Reported findings are the authors'; some entries are summarized from abstracts or public versions and have not been reproduced one by one. Preprints and published versions are merged; unverified records are listed separately.
+**Last updated: 2026-09-16. This is a continuously growing literature and resource list, not a complete systematic review.** Reported findings are the authors'; some entries are summarized from abstracts or public versions and have not been reproduced one by one. Preprints and published versions are merged; unverified records are listed separately.
+
+Latest increment (2026-09-16): backfilled EqGrid (first submitted September 1) under Q3 and verified the DOI/venue metadata of two Q1 entries through Crossref. This is a targeted update, not an exhaustive survey of papers published since the previous update.
 
 ## Contents
 
@@ -110,11 +112,11 @@ Electricity price is the core signal of market operation. Its difficulty: price 
   - Method: incorporates reasoning into semantic modeling of price dynamics.
   - Reading focus: gain of reasoning over pure-feature/pure-numeric approaches; generalization boundary of semantic modeling.
 
-- **LLM Agent-Driven Dynamic Prediction for Day-Ahead Electricity Prices** — IEEE conference, 2026.
+- **LLM Agent-Driven Dynamic Prediction for Day-Ahead Electricity Prices** — 2026 IEEE 2nd International Conference on Electronics, Energy Systems and Power Engineering (EESPE), 2026. [DOI](https://doi.org/10.1109/EESPE68405.2026.11648328)
   - Method: LLM-agent-driven dynamic day-ahead price prediction.
   - Reading focus: the difference between LLM-as-a-"prediction agent" versus LLM-as-a-feature-extractor.
 
-- **A large language model-based reprogramming method for electricity price spread prediction** — *Journal of Renewable and Sustainable Energy*, 2026.
+- **A large language model-based reprogramming method for electricity price spread prediction** — *Journal of Renewable and Sustainable Energy*, 2026 (online July 21). [DOI](https://doi.org/10.1063/5.0336800)
   - Method: LLM-based reprogramming for price-spread prediction.
   - Reading focus: arbitrage-oriented spread (rather than level) prediction; transferability of reprogramming.
 
@@ -187,6 +189,11 @@ When markets shift from centralized to decentralized (P2P, community trading, pr
   - Scenario: equity-aware P2P energy trading aimed at mitigating energy poverty.
   - Method: an LLM–RL agentic workflow explicitly embeds fairness/equity objectives into trading decisions.
   - Reading focus: the fairness-vs-incentive tradeoff; quantifiable validation of the social "mitigate energy poverty" goal.
+
+- **Grounded, Compute-Efficient LLM Policy Agents for Energy-Poverty Equity in Physically-Constrained Peer-to-Peer Energy Markets** — Kunal Jadhav and Siddhesh More; arXiv, September 1, 2026. Authors report acceptance at NLP4PI, EMNLP 2026. [Paper](https://arxiv.org/abs/2609.01918)
+  - Scenario: EqGrid simulates household P2P trading through a continuous double auction on an IEEE 33-bus distribution network.
+  - Method: a low-frequency LLM sets price/carbon bounds and targeted subsidies; high-frequency MARL traders bid, while a separate validation/projection gate enforces grid constraints.
+  - Reading focus: energy-burden equity versus trading cost; policy-model compression versus estimated inference energy. Evidence summarized from the public abstract concerns simulation, not field deployment; code/configuration release is promised there, not verified here.
 
 - **Large Language Models as Strategic Bidding Agents in P2P Energy Trading Markets** — arXiv, 2026. [Paper](https://arxiv.org/abs/2609.05462)
   - Scenario: LLMs as strategic bidding agents in P2P energy trading.

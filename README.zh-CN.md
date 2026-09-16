@@ -6,7 +6,9 @@ A curated reading list of AI in electricity markets, with large language models 
 
 面向 **AI＋电力市场** 的论文与资源清单。以 **LLM（及生成式／基础模型）** 为主体，其它 AI 方法（深度学习、强化学习、时序基础模型、多主体博弈仿真）作为**对照锚点**，用于凸显语言推理带来的增量。按**电力市场中的科学问题**组织：先说明每个问题在研究什么、为什么重要，再介绍该问题下的研究。LLM 论文收录 2024 起；非 LLM 方法收录 2020 起，早期仅保留里程碑。
 
-**更新日期：2026-09-09。当前为持续扩展的文献与资源清单，不是完整系统综述。** 论文结论为作者报告；部分条目基于摘要或公开版本整理，尚未逐篇复现。预印本与正式版本合并记录，待核实题录单列。
+**更新日期：2026-09-16。当前为持续扩展的文献与资源清单，不是完整系统综述。** 论文结论为作者报告；部分条目基于摘要或公开版本整理，尚未逐篇复现。预印本与正式版本合并记录，待核实题录单列。
+
+本次增量（2026-09-16）：在问题三补录 EqGrid（首次提交于 9 月 1 日），并通过 Crossref 核实问题一中两篇论文的 DOI／出处。本次为定向更新，不代表穷尽上次更新以来发表的论文。
 
 ## Contents
 
@@ -112,11 +114,11 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：将推理信息融入电价动态的语义建模。
   - 阅读重点：推理增强相对纯特征/纯数值的增量；语义建模的泛化边界。
 
-- **LLM Agent-Driven Dynamic Prediction for Day-Ahead Electricity Prices** — IEEE 会议论文, 2026.
+- **LLM Agent-Driven Dynamic Prediction for Day-Ahead Electricity Prices** — 2026 IEEE 2nd International Conference on Electronics, Energy Systems and Power Engineering (EESPE), 2026. [DOI](https://doi.org/10.1109/EESPE68405.2026.11648328)
   - 方法：LLM 智能体驱动的日前电价动态预测。
   - 阅读重点：LLM 作为“预测智能体”而非特征器的定位差异。
 
-- **A large language model-based reprogramming method for electricity price spread prediction** — *Journal of Renewable and Sustainable Energy*, 2026.
+- **A large language model-based reprogramming method for electricity price spread prediction** — *Journal of Renewable and Sustainable Energy*, 2026（7 月 21 日在线发表）. [DOI](https://doi.org/10.1063/5.0336800)
   - 方法：用 LLM 重编程（reprogramming）做电价价差预测。
   - 阅读重点：价差（而非电价水平）预测的套利导向；reprogramming 的迁移能力。
 
@@ -189,6 +191,11 @@ A curated reading list of AI in electricity markets, with large language models 
   - 场景：面向缓解能源贫困的权益（equity）感知 P2P 能源交易。
   - 方法：LLM 与强化学习结合的智能体工作流，在交易决策中显式纳入公平/权益目标。
   - 阅读重点：公平目标与经济激励的权衡，以及“缓解能源贫困”这一社会目标的可量化验证。
+
+- **Grounded, Compute-Efficient LLM Policy Agents for Energy-Poverty Equity in Physically-Constrained Peer-to-Peer Energy Markets** — Kunal Jadhav、Siddhesh More；arXiv，2026 年 9 月 1 日。作者注明已被 EMNLP 2026 的 NLP4PI 工作坊接收。[Paper](https://arxiv.org/abs/2609.01918)
+  - 场景：EqGrid 在 IEEE 33 节点配电网上，通过连续双向拍卖仿真家庭 P2P 能源交易。
+  - 方法：低频 LLM 设定价格／碳约束及定向补贴，高频 MARL 交易者竞价，独立的校验与投影模块执行电网约束。
+  - 阅读重点：能源负担公平性与交易成本的权衡，以及策略模型压缩与估计推理能耗的关系。依据公开摘要整理，证据来自仿真而非实际部署；摘要承诺发布代码与配置，本次未核实其已公开。
 
 - **Large Language Models as Strategic Bidding Agents in P2P Energy Trading Markets** — arXiv, 2026. [Paper](https://arxiv.org/abs/2609.05462)
   - 场景：P2P 能源交易市场中作为策略性竞价智能体的 LLM。
@@ -534,4 +541,3 @@ A curated reading list of AI in electricity markets, with large language models 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Altrouge7/Papers-of-LLM-in-Electricity-Market&type=Date)](https://star-history.com/#Altrouge7/Papers-of-LLM-in-Electricity-Market&Date)
-
