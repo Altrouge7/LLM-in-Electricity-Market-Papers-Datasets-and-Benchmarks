@@ -1,4 +1,4 @@
-# Papers-of-LLM-in-Electricity-Market
+# Electricity-Market LLM papers, datasets and benchmarks
 
 > **English（this page）** | [简体中文](README.zh-CN.md)
 
