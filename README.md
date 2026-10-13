@@ -4,11 +4,13 @@
 
 A curated reading list of AI in electricity markets, with large language models (and generative / foundation models) as the primary focus and other AI methods (deep learning, reinforcement learning, time-series foundation models, agent-based / game theory) as comparison anchors. LLM papers cover **2024 onward**; non-LLM methods span **2020 onward** with earlier milestones.
 
-**Last updated: 2026-09-16. This is a continuously growing literature and resource list, not a complete systematic review.** Reported findings are the authors'; some entries are summarized from abstracts or public versions and have not been reproduced one by one. Preprints and published versions are merged; unverified records are listed separately.
+**Last updated: 2026-10-13. This is a continuously growing literature and resource list, not a complete systematic review.** Reported findings are the authors'; some entries are summarized from abstracts or public versions and have not been reproduced one by one. Preprints and published versions are merged; unverified records are listed separately.
 
-Latest increment (2026-09-16): backfilled EqGrid (first submitted September 1) under Q3 and verified the DOI/venue metadata of two Q1 entries through Crossref. This is a targeted update, not an exhaustive survey of papers published since the previous update.
+Latest increment (2026-10-13): added seven main-list papers (TRACE, AlphaCast, CastClaw, E2A-MAS, participatory modeling, ChatElet, and ENTSO-E role-knowledge probing), promoted four existing pending records, and added one bibliographically verified candidate to the pending table. Updated publication/resource metadata, corrected year/method classifications and removed one financial-trading candidate from the electricity-market queue. TRACE was first submitted September 30; the role-knowledge chapter first appeared online October 9. Other additions include backfills and publication updates, not necessarily new work since September 16.
 
-Code availability checked on 2026-09-16: links follow each paper link. “Code: not located” means no matching public implementation was confirmed in this search, not that none exists. Partial code, data-only repositories and supplementary materials are labeled separately; linked implementations have not been rerun.
+Resource availability for new and revised entries was checked on 2026-10-13; untouched code-status labels retain the previous 2026-09-16 check. Links follow their paper entries. “Code: not located” means no matching public implementation was confirmed, not that none exists. Partial code, data-only resources, supplementary materials and project pages awaiting code release are distinguished; linked implementations have not been rerun.
+
+Search scope: 2024–2026 LLM papers across Q1–Q5, with a targeted September 16–October 13, 2026 increment; arXiv/API, Crossref, publishers, author/institutional pages and repository contents. Google Scholar returned no parsable results in this run, and some publisher pages blocked access. Items lacking primary methodological evidence remain pending; this is not an exhaustive systematic review.
 
 ## Contents
 
@@ -50,6 +52,8 @@ The first four are "forward" operating questions; the fifth is the "meta" questi
 
 Electricity price is the core signal of market operation. Its difficulty: price is jointly determined by supply/demand, bid games, weather, fuel, and breaking news, exhibiting spikes, tail risk, and strong mean reversion; text (news, market rules, outage notices) carries causal information beyond the numeric series. LLMs open the previously hard-to-model "text → numeric/event" channel here.
 
+Year groups follow the first public year where verified; formal publication years are retained in each entry. Time-series-only and non-LLM generative methods are listed in the support/comparison sections.
+
 ### 2024
 
 - **Using Generative Pre-Trained Transformers (GPT) for Electricity Price Trend Forecasting in the Spanish Market** — *Energies*, 17(10), 2338, 2024. [Paper](https://www.mdpi.com/1996-1073/17/10/2338) · [Code](https://github.com/AMM-UJI/energy-price-prediction-OpenAI) · [DOI](https://doi.org/10.3390/en17102338)
@@ -62,6 +66,10 @@ Electricity price is the core signal of market operation. Its difficulty: price 
   - Method: fine-tunes an LLM to predict bid behavior and another to extract market sentiment, combined with an improved conditional time-series GAN (CTSGAN).
   - Reading focus: authors report improved price and spike prediction; distinguish "predicting others' bids" from "optimizing one's own bid".
 
+- **From News to Forecast: Integrating Event Analysis in LLM-Based Time Series Forecasting with Reflection** — NeurIPS, 2024. [Paper](https://arxiv.org/abs/2409.17515) · [Code](https://github.com/daydreamer-amelia/From_News_to_Forecast)
+  - Method: extracts events from news and uses a reflection mechanism to aid LLM time-series forecasting; a general framework with energy/power benchmarks.
+  - Reading focus: attribution of gains to event analysis, and whether reflection reduces hallucination; a general baseline for event-driven forecasting.
+
 ### 2025
 
 - **LLM-Enhanced Feature Engineering for Multi-Factor Electricity Price Predictions** — arXiv, 2025. [Paper](https://arxiv.org/abs/2505.11890) · Code: not located.
@@ -69,34 +77,20 @@ Electricity price is the core signal of market operation. Its difficulty: price 
   - Method: FAEP uses LLM/RAG-enhanced features (weather, price jumps, etc.) feeding an XGBoost–LSTM.
   - Reading focus: how much gain comes from new information vs LLM feature processing vs the downstream model.
 
-- **NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs** — arXiv, 2025. [Paper](https://arxiv.org/abs/2506.11050) · Code: not located.
+- **NSW-EPNews: A News-Augmented Benchmark for Electricity Price Forecasting with LLMs** — arXiv, 2025. [Paper](https://arxiv.org/abs/2506.11050) · Code: not located · [Dataset / experimental materials](https://figshare.com/s/2a00cae76712b59f63ea)
   - Data: NSW 2015–2024, >175k half-hour prices, temperature, and WattClarity news; 48-step forecasting.
   - Method: compares conventional models vs LLMs using structured context.
   - Result: news gives limited gain for conventional models; LLM improvement is small and produces hallucinated or malformed price series. Record both positive and negative results.
+  - Resource check: the paper-matched Figshare landing page is accessible; archive contents and implementation completeness were not inspected. Conference acceptance was not confirmed.
 
-- **From News to Forecast: Integrating Event Analysis in LLM-Based Time Series Forecasting with Reflection** — NeurIPS, 2024. [Paper](https://arxiv.org/abs/2409.17515) · [Code](https://github.com/daydreamer-amelia/From_News_to_Forecast)
-  - Method: extracts events from news and uses a reflection mechanism to aid LLM time-series forecasting; a general framework with energy/power benchmarks.
-  - Reading focus: attribution of gains to event analysis, and whether reflection reduces hallucination; a general baseline for event-driven forecasting.
+- **LLM-Enhanced Short-Term Electricity Price Forecasting Method for Australian Electricity Market** — online December 24, 2025; *Applied Sciences*, 16(1), 200, 2026. [Paper](https://www.mdpi.com/2076-3417/16/1/200) · Code: not located · [DOI](https://doi.org/10.3390/app16010200)
+  - Market: NSW five-minute prices; the publisher text describes evaluation across 2024, with individual months used as illustrative cases.
+  - Method: LLM-extracted news features are combined with numerical covariates, quantile regression and conformal calibration.
+  - Reading focus: reconstruct the actual evaluation split and reconcile month/metric descriptions in the text and figures before comparing results; do not infer a one-month-only evaluation from a case plot.
 
-- **Regression Models Meet Foundation Models: A Hybrid-AI Approach to Practical Electricity Price Forecasting** — arXiv, 2026. [Paper](https://arxiv.org/abs/2603.06726) · [Code](https://github.com/thulab/FutureBoosting)
-  - Method: hybridizes regression models with time-series foundation models for practical price forecasting.
-  - Reading focus: source of gains over pure foundation models; comparison against pure time-series baselines (MSTL, Chronos, etc.).
-
-- **LLM-Enhanced Short-Term Electricity Price Forecasting Method for Australian Electricity Market** — online 2025-12-24; *Applied Sciences*, 16(1), 200, 2026. [Paper](https://www.mdpi.com/2076-3417/16/1/200) · [DOI](https://doi.org/10.3390/app16010200) · Code: not located.
-  - Market: NSW five-minute prices; main evaluation includes a May 2024 scenario.
-  - Method: LLM turns news into event features, combined with weather, periodic variables, quantile regression, and conformal calibration.
-  - Reading focus: probabilistic forecasting and interval calibration, plus generalization bounds under a short evaluation window.
-
-### 2026
-
-- **A Few-Shot LLM Framework for Extreme Day Classification in Electricity Markets** — arXiv, 2026. [Paper](https://arxiv.org/abs/2602.16735) · Code: not located.
-  - Market: Texas, USA.
-  - Method: feeds load, renewables, weather, and recent price statistics into a prompt to judge whether the next day has a price spike.
-  - Result: authors report beating SVM/XGBoost in few-shot; the task is extreme-day classification, not full price-trajectory forecasting.
-
-- **Reasoning-enhanced probabilistic electricity price forecasting using parameter-efficient large language models** — *Applied Energy*, 2026. [DOI](https://doi.org/10.1016/j.apenergy.2026.128712) · Code: not located.
-  - Method: parameter-efficient (PEFT) LLMs enhanced with reasoning for probabilistic price forecasting.
-  - Reading focus: probabilistic calibration of reasoning-enhanced vs pure-numeric baselines; the cost–gain tradeoff of PEFT.
+- **AlphaCast: A Human Wisdom-LLM Intelligence Co-Reasoning Framework for Interactive Time Series Forecasting** — arXiv, first submitted November 12, 2025; v5 April 10, 2026. [Paper](https://arxiv.org/abs/2511.08947) · [Code](https://github.com/ustc-time-series/AlphaCast)
+  - Method: training-free LLM agents prepare context, generate forecasts and refine them through reflection, supported by feature, knowledge, case and contextual tools.
+  - Market/reading focus: hourly day-ahead prices from Belgium, Germany, France, Nord Pool and PJM. Separate the contribution of LLM reasoning from auxiliary forecasters and richer input information.
 
 - **Electricity Market Price Forecast via LLM-based Sentiment Analysis and TimeXer** — 2025 7th International Conference on Data-driven Optimization of Complex Systems (DOCS), 2025. [DOI](https://doi.org/10.1109/DOCS67533.2025.11200590) · Code: not located.
   - Method: LLM extracts market sentiment as features, combined with the TimeXer time-series model.
@@ -110,6 +104,17 @@ Electricity price is the core signal of market operation. Its difficulty: price 
   - Method: LLMs for intelligent preprocessing and forecasting of price data.
   - Reading focus: gains from preprocessing (cleaning/imputation/featurization) vs forecasting separately; robustness under poor data quality.
 
+### 2026
+
+- **A Few-Shot LLM Framework for Extreme Day Classification in Electricity Markets** — arXiv, 2026. [Paper](https://arxiv.org/abs/2602.16735) · Code: not located.
+  - Market: Texas, USA.
+  - Method: feeds load, renewables, weather, and recent price statistics into a prompt to judge whether the next day has a price spike.
+  - Result: authors report beating SVM/XGBoost in few-shot; the task is extreme-day classification, not full price-trajectory forecasting.
+
+- **Reasoning-enhanced probabilistic electricity price forecasting using parameter-efficient large language models** — *Applied Energy*, 2026. [DOI](https://doi.org/10.1016/j.apenergy.2026.128712) · Code: not located.
+  - Method: parameter-efficient (PEFT) LLMs enhanced with reasoning for probabilistic price forecasting.
+  - Reading focus: probabilistic calibration of reasoning-enhanced vs pure-numeric baselines; the cost–gain tradeoff of PEFT.
+
 - **RIS-LLM: Reasoning-informed semantic modeling of electricity market price dynamics** — *Advanced Engineering Informatics*, 2026. [DOI](https://doi.org/10.1016/j.aei.2026.104949) · Code: not located.
   - Method: incorporates reasoning into semantic modeling of price dynamics.
   - Reading focus: gain of reasoning over pure-feature/pure-numeric approaches; generalization boundary of semantic modeling.
@@ -122,13 +127,17 @@ Electricity price is the core signal of market operation. Its difficulty: price 
   - Method: LLM-based reprogramming for price-spread prediction.
   - Reading focus: arbitrage-oriented spread (rather than level) prediction; transferability of reprogramming.
 
-- **Probabilistic Forecasting of Real-Time Electricity Market Signals via Interpretable Generative AI** — arXiv, 2024. [Paper](https://arxiv.org/abs/2403.05743) · Code: not located.
-  - Method: interpretable generative AI for probabilistic forecasting of real-time signals (LMPs, interregional spreads, supply-demand imbalance).
-  - Reading focus: probabilistic calibration and interpretability; real-time vs day-ahead signals.
+- **TRACE: A Reproducible Benchmark for Electricity Price Forecasting with Official Operational Text** — arXiv, first submitted September 30, 2026. Authors report acceptance at the NeurIPS 2026 Workshop on Foundation Models for Time Series. [Paper](https://arxiv.org/abs/2610.02256) · Code/data: public release not located.
+  - Benchmark: 7,300 zone–day instances from five PJM zones, pairing prices with official operational text reconstructed at the forecast cutoff.
+  - Reading focus: forecast-time availability, cancellation/applicability timestamps and matched numerical controls. Authors report the most consistent text-related gains for upper-tail risk; cross-day text mismatch reverses the gains.
 
-- **Assessing time series foundation models for probabilistic electricity price forecasting: Toward a unified benchmark** — *Energies*, 2025. [DOI](https://doi.org/10.3390/en18236269) · [Code](https://github.com/MarchesiGabriele/PEPF_bench)
-  - Method: a unified benchmark assessing time-series foundation models on probabilistic price forecasting.
-  - Reading focus: complements "Benchmarking Pre-Trained Time Series Models"; a unified protocol for probabilistic evaluation.
+- **A Human-in-the-Loop Autonomous Agent for Industry Time Series Forecasting** — arXiv, August 31, 2026 (CastClaw). [Paper](https://arxiv.org/abs/2608.30976) · [Code](https://github.com/ustc-time-series/CastClaw) · [Project](https://ustc-time-series.github.io/cast-claw/)
+  - Method: coordinates specialized forecasters, tools, human constraints and versioned evidence to check, retain or revise forecasts; evaluation includes five electricity-price datasets.
+  - Reading focus: authors report favorable MSE/MAE point estimates against 16 baselines, while repeated-run significance and component attribution remain unresolved. Check validation gates, rejected revisions, stopping rules and equal tool/model budgets.
+
+- **An on-premises end-to-end automated forecasting multi-agent system for the energy domain** — *Engineering Applications of Artificial Intelligence*, 181, Part 7, 115728, October 2026. [Paper](https://doi.org/10.1016/j.engappai.2026.115728) · [Project page (code pending)](https://github.com/ZihangQiu/E2A-MAS)
+  - Method: E2A-MAS coordinates feature engineering, preprocessing, model selection and hyperparameter retuning; its energy-domain experiments include the Belgian ods134 electricity-price dataset.
+  - Reading focus: distinguish price-specific accuracy from workflow success and compare training budgets. At the 2026-10-13 check, the linked repository contained only a README promising code release; an implementation was not publicly available there.
 
 ---
 
@@ -161,6 +170,14 @@ Price forecasting is only input; the value lies in **decisions**: when storage c
   - Method: dual-agent LLMs combined with genetic evolution to iteratively generate and select bidding strategies.
   - Reading focus: whether genetic selection pressure is driven by real market feedback; convergence and overfitting risk.
 
+- **A Semantic Risk-Aware Optimization Framework for Virtual Power Plant Dispatch Using Large Language Models** — *Energies*, 19(12), 2820, June 12, 2026. [Paper](https://www.mdpi.com/1996-1073/19/12/2820) · Code: not located · [DOI](https://doi.org/10.3390/en19122820)
+  - Method: RAG-VPP converts market notices and warnings into semantic risk signals for scenario generation, reserve constraints and stochastic MIQP dispatch; the LLM supplies inputs to the optimizer.
+  - Market/evidence: a seven-day ERCOT-style stress test with synthetic ISO-like alerts and five-minute market resolution. Reported profit and risk improvements are controlled-simulation results, not a reconstruction of the historical ERCOT crisis or live trading evidence.
+
+- **Large Language Model Based Data Augmentation for Peak Electricity Price Forecasting and Battery Energy Storage Arbitrage** — *2025 IEEE International Conference on Systems, Man, and Cybernetics (SMC)*, 7762–7767, 2025. [Paper](https://doi.org/10.1109/SMC58881.2025.11342789) · Code: not located · [Institutional abstract](https://scholars.cityu.edu.hk/en/publications/large-language-model-based-data-augmentation-for-peak-electricity/)
+  - Method: prompts containing domain knowledge and physical constraints guide LLM generation of rare peak-price samples; augmented data feed Monte Carlo dropout forecasts and scenario-based stochastic optimization for BESS arbitrage.
+  - Reading focus: whether synthetic extremes improve forecast calibration and arbitrage returns. Bibliography and the institutional abstract are verified; full-text data splits, detailed baselines and reproducibility remain unverified.
+
 ---
 
 ## Q3: How are market mechanisms and trading designed
@@ -172,10 +189,9 @@ When markets shift from centralized to decentralized (P2P, community trading, pr
   - Method: LLM generates personalized expert strategies, guides MARL via imitation, and a differential-attention critic is used.
   - Result: authors report lower trading cost and voltage-limit violations. The repo link is supplementary material, not a full reproducible implementation.
 
-- **Scalable Fairness Shaping with LLM-Guided Multi-Agent Reinforcement Learning for Peer-to-Peer Electricity Markets** — arXiv, 2025. [Paper](https://arxiv.org/abs/2508.18610) · [Partial code / toy demo](https://github.com/SHRENIK000/fairmarket-rl-llm-fairness-energy-markets) — Core training, market simulator and LLM critic withheld.
-  - Scenario: P2P prosumer trading under continuous double auction.
-  - Method: an LLM critic scores grid, inter-seller, and pricing fairness, folded into the reward.
-  - Reading focus: the fairness-vs-economic-incentive tradeoff and the stability of LLM evaluation.
+- **Scalable Fairness Shaping with LLM-Guided Multi-Agent Reinforcement Learning for Peer-to-Peer Electricity Markets** — 2025 preprint; *Utilities Policy*, 100, 102168, June 2026. [Paper](https://arxiv.org/abs/2508.18610) · [Partial code / toy demo](https://github.com/SHRENIK000/fairmarket-rl-llm-fairness-energy-markets) · [DOI](https://doi.org/10.1016/j.jup.2026.102168)
+  - Method: an LLM critic evaluates grid dependence, seller fairness and pricing fairness after each auction, shaping MARL rewards in a continuous double auction.
+  - Reading focus: fairness–profit trade-offs and transfer to larger communities. The public repository provides interfaces and a toy environment; training, the full market simulator and LLM critic remain withheld.
 
 - **Large Language Model Assisted Peer-to-Peer Energy Trading System** — *Journal of Energy Engineering*, 152(4), 2026. [Paper](https://ascelibrary.org/doi/abs/10.1061/JLEED9.EYENG-6440) · Code/models: available on request (author statement).
   - Scenario: household P2P trading under supply-demand-ratio pricing.
@@ -197,20 +213,15 @@ When markets shift from centralized to decentralized (P2P, community trading, pr
   - Method: a low-frequency LLM sets price/carbon bounds and targeted subsidies; high-frequency MARL traders bid, while a separate validation/projection gate enforces grid constraints.
   - Reading focus: energy-burden equity versus trading cost; policy-model compression versus estimated inference energy. Evidence summarized from the public abstract concerns simulation, not field deployment; code/configuration release is promised there, not verified here.
 
-- **Large Language Models as Strategic Bidding Agents in P2P Energy Trading Markets** — arXiv, 2026. [Paper](https://arxiv.org/abs/2609.05462) · [Code](https://github.com/ismail0T/Strategic_Bidding_P2P_Energy_Trading)
-  - Scenario: LLMs as strategic bidding agents in P2P energy trading.
-  - Method: LLMs directly act as prosumer bidding agents; studies their strategic bids and market outcomes.
-  - Reading focus: whether LLM bids are strategically rational; comparison against MARL and game-theoretic baselines.
+- **Large Language Models as Strategic Bidding Agents in P2P Energy Trading Markets** — arXiv, 2026; authors report acceptance at IEEE IECON 2026. [Paper](https://arxiv.org/abs/2609.05462) · [Code](https://github.com/ismail0T/Strategic_Bidding_P2P_Energy_Trading)
+  - Method: LLM agents directly choose prices in repeated P2P double auctions, evaluated against random bidding and an epsilon-greedy multi-armed bandit.
+  - Reading focus: early-round trading-volume advantages and adaptation after market changes, alongside increasingly seller-favored surplus allocation. These experiments do not establish superiority over general MARL methods.
+  - Code scope: bidding, LLM calls and clearing are implemented, but repository defaults differ from the paper's experiment configuration; results have not been reproduced here.
 
 - **Integrating large language models into Peer-to-Peer energy management for multi-tenant buildings: A guardrail approach to ensuring resilience** — *Neural Networks*, 2026. [Paper](https://doi.org/10.1016/j.neunet.2026.108814) · Code: not located.
   - Scenario: P2P energy management in multi-tenant buildings, emphasizing guardrails and resilience.
   - Method: embeds LLMs into P2P energy management and uses constraint/guardrail mechanisms to preserve resilience under anomalies.
   - Reading focus: how guardrails constrain erroneous LLM output; how resilience is quantified.
-
-- **AI agents in Algorithmic Electricity Markets: On the Emergence of Tacit Collusion** — arXiv, 2026. [Paper](https://arxiv.org/abs/2608.26896) · Code: not located.
-  - Scenario: the algorithmic turn of oligopolistic markets and the risk of tacit collusion once learning-based bidding agents dominate.
-  - Method: models strategic bidding as a repeated game and studies whether independently-learning agents spontaneously sustain tacit collusion.
-  - Reading focus: competitive-compliance of LLM/RL bidding agents; the "individual rationality → aggregate collusion" mechanism warning — the most important new gap to track in this list.
 
 - **Draining the Energy Commons: Self-Defeating Over-Appropriation as a Coordination Failure in Agentic LLM Collectives** — arXiv, 2026. [Paper](https://arxiv.org/abs/2607.22188) · Code: not located.
   - Scenario: coordination failure of LLM prosumer collectives over a shared renewable-energy commons.
@@ -266,6 +277,14 @@ Even with single-agent decision models, we still need to understand **emergent w
   - Method: simulates a stock market with LLM agents (~51 citations).
   - Reading focus: whether adjacent-domain (finance) LLM market simulation transfers to electricity markets.
 
+- **Generative AI-assisted Participatory Modeling in Socio-Environmental Planning under Deep Uncertainty** — arXiv, March 17, 2026; v2 March 19. [Paper](https://arxiv.org/abs/2603.17021) · [Code and supplementary materials](https://github.com/Hardy-Pei01/LLM-for-DMDU)
+  - Method/market: a templated human–LLM workflow turns stakeholder descriptions into formal models and Python implementations, including a five-producer day-ahead electricity-market case and wind-revenue assessment.
+  - Reading focus: a modeling proof of concept requiring human verification and refinement, not a market simulator calibrated on real participant behavior. The repository includes market case scripts and conversation records.
+
+- **LLM-CECM: A simulation framework for strategic generation behavior in coupled electricity-carbon markets** — *Renewable Energy*, 273, 126139, 2026 (October issue); author preprint posted April 24, 2026. [Paper](https://doi.org/10.1016/j.renene.2026.126139) · Code: not located · [Author version](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6643509)
+  - Method: LLM agents maintain personas, memory and beliefs for coupled electricity/carbon orders, with adaptive reasoning frequency and fixed-depth counterfactual reasoning; carbon clearing feeds back into electricity offers before network dispatch.
+  - Reading focus: Australian market inputs combined with an IEEE 118-bus testbed. Reported efficiency and price-path effects are simulation evidence, not proof of equilibrium or calibration to real trader behavior.
+
 ---
 
 ## Q5: Can models understand rules and policy, and be evaluated
@@ -309,6 +328,14 @@ This is the "meta" question: before using LLMs for trading, ask whether they tru
   - Method: a wind-energy RAG benchmark; a reference for energy-domain RAG evaluation (not pure electricity market).
   - Reading focus: citation-reliability evaluation patterns that can transfer to market-regulation RAG.
 
+- **Closed-Book Probing of Electricity-Market Role Knowledge in Language Models: The ENTSO-E Harmonised Role Model** — *Energy Informatics*, EI.A 2026, LNCS 16981, 339–358; first online October 9, 2026; proceedings bibliographic year 2027. [Paper](https://link.springer.com/chapter/10.1007/978-3-032-41864-7_22) · Code: not located · [DOI](https://doi.org/10.1007/978-3-032-41864-7_22)
+  - Benchmark: closed-book recognition and free-recall probes of electricity-market roles and relationships, with programmatic scoring; evaluates nine open-weight and three frontier models.
+  - Reading focus: recognizing supplied roles is easier than reconstructing their relationships from memory; distinguish terminology recognition from usable market-structure knowledge.
+
+- **检索增强生成融合政策动态演化机制的电力市场智能问答系统** (Retrieval-augmented generation integrated with policy dynamic evolution mechanism for intelligent Q&A system in electricity market) — *Journal of Computer Applications*, online May 29, 2026 (ChatElet). [Journal article](https://www.joca.cn/EN/abstract/abstract37949.shtml) · Code: not located · [DOI](https://doi.org/10.11772/j.issn.1001-9081.2026010113)
+  - Method: a policy ontology and dynamic knowledge graph support multi-path retrieval, semantic reranking and hallucination checks for electricity-market policy QA.
+  - Reading focus: evaluation covers 500 single-turn questions and 452 follow-up rounds; examine policy-version validity, applicability and conflict handling. The publisher supplies the online record and abstract; issue/page metadata and public evaluation assets were not confirmed.
+
 ---
 
 ## Support: time-series foundation models and baselines
@@ -317,7 +344,7 @@ The following are for baseline and evaluation design; they are not evidence of "
 
 - **Energy Price Modelling: A Comparative Evaluation of four Generations of Forecasting Methods** — arXiv, 2024. [Paper](https://arxiv.org/abs/2411.03372) · [Code](https://github.com/QuantLet/AI4EFin)
   - Compares forecasting methods on European energy markets; baseline for econometric, ML, sequence, and Transformer approaches.
-- **Benchmarking Pre-Trained Time Series Models for Electricity Price Forecasting** — 2025, public preprint. [Paper](https://arxiv.org/abs/2506.08113) · Code: not located.
+- **Benchmarking Pre-Trained Time Series Models for Electricity Price Forecasting** — *2025 21st International Conference on the European Energy Market (EEM)*, 2025. [Paper](https://arxiv.org/abs/2506.08113) · Code: not located · [DOI](https://doi.org/10.1109/EEM64765.2025.11050326)
   - Day-ahead prices in five European countries in 2024; compares Chronos, TimesFM, Moirai, etc.
   - Authors report no time-series foundation model statistically beats their double-seasonal MSTL baseline.
 - **Forecasting Day-Ahead Residential Electricity Prices Using a Large Language Model** — SSRN working paper, 2025. [Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5158359) · Code: not located.
@@ -329,6 +356,14 @@ The following are for baseline and evaluation design; they are not evidence of "
   - Directly addresses the "forecast→profit" research question; distinguishes statistical accuracy from arbitrage profit.
 - **A systematic review of transformers and large language models in the energy sector: towards agentic digital twins** — *Applied Energy*, 2025. [Paper](https://doi.org/10.1016/j.apenergy.2025.126670) · Code: not located.
   - A systematic review of transformers/LLMs in energy (market and agent directions); an entry point to the domain landscape.
+
+- **Regression Models Meet Foundation Models: A Hybrid-AI Approach to Practical Electricity Price Forecasting** — arXiv, 2026. [Paper](https://arxiv.org/abs/2603.06726) · [Code](https://github.com/thulab/FutureBoosting)
+  - Method: hybridizes regression models with time-series foundation models for practical price forecasting.
+  - Reading focus: source of gains over pure foundation models; comparison against pure time-series baselines (MSTL, Chronos, etc.).
+
+- **Assessing time series foundation models for probabilistic electricity price forecasting: Toward a unified benchmark** — *Energies*, 2025. [DOI](https://doi.org/10.3390/en18236269) · [Code](https://github.com/MarchesiGabriele/PEPF_bench)
+  - Method: a unified benchmark assessing time-series foundation models on probabilistic price forecasting.
+  - Reading focus: complements "Benchmarking Pre-Trained Time Series Models"; a unified protocol for probabilistic evaluation.
 
 ### LLM surveys in energy/power (panorama entry points)
 
@@ -364,6 +399,10 @@ These works do not use (or do not center on) language models; they solve electri
 
 - The DL baselines (DNN/RNN/CNN) in the **Forecasting day-ahead electricity prices** survey are the most common non-LLM forecasting comparisons.
 - **A comparison of modern deep neural network architectures for energy spot price forecasting** — compares DNN/RNN/CNN on spot-price forecasting; "what pure-numeric DL can do". · Code: pending bibliographic verification.
+
+- **Probabilistic Forecasting of Real-Time Electricity Market Signals via Interpretable Generative AI** — arXiv, March 9, 2024. [Paper](https://arxiv.org/abs/2403.05743) · Code: not located.
+  - Non-LLM method: WIAE-GPF uses a weak-innovations autoencoder for generative probabilistic forecasts of real-time market signals, including nodal prices, spreads and imbalance.
+  - Reading focus: calibration, temporal dependence and interpretable numerical representations; generative modeling here does not imply a language model.
 
 ### Reinforcement-learning bidding and storage
 
@@ -411,6 +450,9 @@ The following are milestone RL-bidding works (many with hundreds of citations), 
 - **Evaluation of Electricity Market Clearing Mechanisms via Reinforcement Learning: Prices, Remuneration and Competitive Dynamics** — arXiv, 2026. [Paper](https://arxiv.org/abs/2602.01392) · [Code](https://github.com/andyalt23/report-electricity-market-comparison-rl)
   - Uses RL agents to evaluate Pay-as-Clear and other clearing mechanisms; a non-LLM comparison for "mechanism design".
 
+- **Integrating Multi-Agent Reinforcement Learning and Evolutionary Game Theory for Adaptive Virtual Bidding Strategies in Electricity Markets** — *Journal of Power and Energy Engineering*, 14(4), 1–24, 2026. [Paper](https://www.scirp.org/journal/paperinformation?paperid=150495) · Code: not located · [DOI](https://doi.org/10.4236/jpee.2026.144001)
+  - Non-LLM comparison: MADDPG and evolutionary game analysis for virtual bidding, with heterogeneous participants, budget and CVaR constraints. Useful as a numerical decision baseline; the verified method does not introduce a language-model agent.
+
 ### Multi-agent RL and P2P
 
 - **Renewable energy integration and microgrid energy trading using multi-agent deep reinforcement learning** — *Applied Energy*, 2022. [Paper](https://www.sciencedirect.com/science/article/pii/S0306261922005256) · Code: not located.
@@ -435,6 +477,10 @@ The following are milestone RL-bidding works (many with hundreds of citations), 
 - **An Adaptive Q-Learning Algorithm Developed for Agent-Based Computational Modeling of Electricity Market** — *IEEE Transactions on Systems, Man, and Cybernetics, Part C*, 40(5), 2010. [DOI](https://doi.org/10.1109/TSMCC.2010.2044174) · Code: not located.
   - Adaptive Q-learning for electricity-market ABM computational modeling (~125 citations).
 
+- **AI agents in Algorithmic Electricity Markets: On the Emergence of Tacit Collusion** — arXiv, August 27, 2026. [Paper](https://arxiv.org/abs/2608.26896) · Code: not located.
+  - Non-LLM method: multi-agent TD3 for strategic bidding in repeated, network-constrained electricity-market clearing.
+  - Reading focus: deviation-punishment tests, shortsight ablations and iterative best responses provide numerical baselines for detecting tacit collusion beyond elevated profits alone; this paper does not test LLM bidders.
+
 ---
 
 ## Support: datasets, benchmarks and tools
@@ -452,7 +498,9 @@ Reproducible datasets, benchmarks, toolkits, and trading-simulation environments
 ### LLM / agent evaluation benchmarks
 
 - **SolarChain-Eval: A Physics-Constrained Benchmark for Trustworthy Economic Agents in Decentralized Energy Markets** — arXiv, 2026. Physics-constrained evaluation of economic agents in decentralized energy markets. [Paper](https://arxiv.org/abs/2607.08681) · [Code](https://github.com/yxu-dev/SolarChain-Eval)
-- **EnergyAgentBench: Benchmarking LLM Agents on Live Energy Infrastructure Data** — arXiv, 2026. Multi-step tool-use evaluation on live energy data (siting, cost-carbon tradeoffs, long-horizon portfolios); not a short-term bidding benchmark. [Paper](https://arxiv.org/abs/2605.15230) · Code: not located.
+- **EnergyAgentBench: Benchmarking LLM Agents on Live Energy Infrastructure Data** — arXiv, 2026. [Paper](https://arxiv.org/abs/2605.15230) · [Code](https://github.com/TheHydroguy/energyagentbench)
+  - Evaluates multi-step tool use for electricity-market-region selection, cost–carbon trade-offs and long-horizon infrastructure decisions, rather than short-term bidding.
+  - The repository includes task generators, scoring, model runners and tool adapters; execution depends on external model services and live QuarluxAI endpoints. Code presence is not a completed reproduction.
 - **energy-markets-eval** — Hugging Face dataset, energy-market evaluation samples (30 samples, 6 domains). [Dataset](https://huggingface.co/datasets/karthikchundi/energy-markets-eval)
 - **DSM-EQA** — demand-side-management energy QA evaluation set (GitHub). [Repo](https://github.com/samarhashmi/DSM-EQA)
 
@@ -467,7 +515,7 @@ Reproducible datasets, benchmarks, toolkits, and trading-simulation environments
 
 ### LLM / agent trading environments and benchmarks
 
-The following resources sit closer to "LLM agent × electricity market" evaluation and execution. Note: right now the ecosystem still **lacks LLM-native electricity-market trading environments** (double-auction, clearing, bidding); most are general/DRL market simulators adapted to LLMs, or power-system (power-flow/dispatch) agent benchmarks.
+Public LLM-oriented electricity-market resources now include P2P bidding implementations and market-governance benchmarks, alongside general and RL-based simulators. Their market mechanisms, physical constraints, agent roles and release completeness differ; assess each resource for the intended bidding, clearing or policy-evaluation task.
 
 - **OPLEM: Open Platform for Local Energy Markets** — *Applied Energy*, 2024. An open simulation platform for local energy markets (P2P, demand response, storage agents); a market substrate for LLM trading agents. [Paper](https://www.sciencedirect.com/science/article/pii/S0306261924012315) · [Code](https://github.com/PSALOxford/OPLEM)
 - **Agentic AI for Price-Only 15 min SDAC Market Diagnostics in Central and Eastern Europe** — MDPI, 2026. Agentic diagnostics for the SDAC single day-ahead coupling market. [Paper](https://www.mdpi.com/2571-5577/9/5/93) · [Case data (no implementation)](https://github.com/sener3/energy-agents)
@@ -485,16 +533,14 @@ Retained but not yet verified on full text, publication date, or experiments; do
 | --- | --- | --- | --- |
 | 2024 | Large Language Model for Extreme Electricity Price Forecasting in the Australia Electricity Market | [IEEE IECON 2024 / DOI](https://doi.org/10.1109/IECON55916.2024.10906045) · Code: not located | full method, data, baselines |
 | 2025 | A Large Language Model-Based Agent for Automated Bidding Strategy Generation in Electricity Markets | [IEEE ICPIES 2025 / DOI](https://doi.org/10.1109/ICPIES65420.2025.11070004) · Code: not located | full method, strategy evaluation |
-| 2025 | Large Language Model Based Data Augmentation for Peak Electricity Price Forecasting and Battery Energy Storage Arbitrage | [IEEE SMC 2025 / DOI](https://doi.org/10.1109/SMC58881.2025.11342789) · Code: not located | data-augmentation mechanism, arbitrage experiments |
-| 2026 | LLM-CECM: A simulation framework for strategic generation behavior in coupled electricity-carbon markets | [Publisher page](https://www.sciencedirect.com/science/article/pii/S0960148126009651) · Code: not located | online date, full simulation setup and validation |
 | 2025 | A Review of Large Language Models for Energy Systems: Applications, Challenges, and Future Prospects | [IEEE Access / DOI](https://doi.org/10.1109/ACCESS.2025.3610994) · Code: not located | whether it has an electricity-market section; entry vs. standalone |
-| 2025 | Virtual Power Plant Trading Strategy in the Electricity Market Based on Prompt-LLM & MAPPO | [Journal page](https://opaj.napstic.cn/periodicalArticle/0120260601343662) · Code: not located | Chinese record, journal full name, experiments/baselines (note: not the same as the Crossref-matched PowerCon DRL paper) |
+| 2026 (indexed) | Virtual Power Plant Trading Strategy in the Electricity Market Based on Prompt-LLM & MAPPO | [DOI](https://doi.org/10.3969/j.issn.1007-290X.2026.04.002) · [Wanfang record](https://d.wanfangdata.com.cn/periodical/gddl202604002) · Code: not located | Indexed as Guangdong Electric Power, 39(4), 13–26; original journal text, LLM implementation and baselines remain unverified |
 | 2025 | An In-Context LLM for PV-BESS Operations: Adaptive Day-Ahead Strategy Recommendation for Economic Optimization | [IEEE Access / DOI](https://doi.org/10.1109/ACCESS.2025.3638429) · Code: not located | market bidding vs. pure operation optimization |
 | 2025 | Modeling and optimization of virtual power plant energy market behavior based on news sentiment and natural semantic analysis | [Sustainable Energy Tech. & Assess. / DOI](https://doi.org/10.1016/j.seta.2025.104718) · Code: not located | LLM's exact role, experiments/baselines |
-| 2026 | A Semantic Risk-Aware Optimization Framework for Virtual Power Plant Dispatch Using Large Language Models | [MDPI Energies / DOI](https://doi.org/10.3390/en19122820) · Code: not located | market dispatch vs. pure operation, baselines |
 | 2026 | Large Language Model Applications in Power Systems: A Comprehensive Review and Outlook | [J. Modern Power Systems & Clean Energy / DOI](https://doi.org/10.35833/MPCE.2025.000760) · Code: not located | electricity-market section share; entry vs. standalone |
-| 2026 | Integrating Multi-Agent Reinforcement Learning and Evolutionary Game Theory for Adaptive Virtual Bidding Strategies in Electricity Markets | [J. Power and Energy Engineering / DOI](https://doi.org/10.4236/jpee.2026.144001) · Code: not located | contains LLM or pure MARL |
-| 2024 | Agents are all you need: Elevating Trading Dynamics with Advanced Generative AI-Driven Conversational LLM Agents and Tools | [IEEE I2CT / DOI](https://doi.org/10.1109/I2CT61223.2024.10543356) · Code: not located | whether "Trading Dynamics" refers to electricity/energy trading (abstract unverified) |
+| 2025 | An Event-Aware Price Spread Arbitrage Decision Framework for Electricity Retailers in Spot Markets | [IEEE EI² 2025 / DOI](https://doi.org/10.1109/EI268505.2025.11425643) · Code: not located | Crossref verifies title, conference and pp. 2066–2070; primary abstract/full text, LLM role, market data and arbitrage evaluation remain unverified |
+
+Screening note (2026-10-13): removed *Agents are All you need: Elevating Trading Dynamics with Advanced Generative AI-Driven Conversational LLM Agents and Tools* ([DOI](https://doi.org/10.1109/I2CT61223.2024.10543356)) from the pending electricity-market records: the [authors' organization describes financial workflows](https://rastrai.com/news), and an electricity-market application was not established.
 
 ---
 
@@ -504,9 +550,9 @@ Gaps remaining after organizing by scientific question (not claimed to be verifi
 
 | Scientific question | Research question | Current gap |
 | --- | --- | --- |
-| Price formation & forecasting | information gain, event timeliness | no unified cross-market "text→price" benchmark; negative results under-recorded |
+| Price formation & forecasting | information gain, event timeliness | NSW-EPNews and TRACE provide concrete text–price benchmarks; cross-market protocol alignment and comparable negative results still need assessment |
 | Bidding & decision | forecast→profit, rule migration | LLM-native bidding environments scarce; gains mostly validated in simulation, not real markets |
-| Mechanism & trading design | fairness vs incentive | fairness evaluation unstable; LLM/learning-agent tacit-collusion risk just raised, no systematic assessment |
+| Mechanism & trading design | fairness vs incentive | fairness–incentive evidence remains setting-dependent; distinguish established MARL collusion tests from still-open questions about LLM bidders |
 | Modeling & simulation | behavior calibration | LLM-simulated bid distributions/prices rarely calibrated against real data |
 | Rules, policy & evaluation | domain capability vs trading profit | the gap between QA scores and real trading returns is unquantified |
 
