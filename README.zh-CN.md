@@ -6,13 +6,13 @@ A curated reading list of AI in electricity markets, with large language models 
 
 面向 **AI＋电力市场** 的论文与资源清单。以 **LLM（及生成式／基础模型）** 为主体，其它 AI 方法（深度学习、强化学习、时序基础模型、多主体博弈仿真）作为**对照锚点**，用于凸显语言推理带来的增量。按**电力市场中的科学问题**组织：先说明每个问题在研究什么、为什么重要，再介绍该问题下的研究。LLM 论文收录 2024 起；非 LLM 方法收录 2020 起，早期仅保留里程碑。
 
-**更新日期：2026-10-28。当前为持续扩展的文献与资源清单，不是完整系统综述。** 论文结论为作者报告；部分条目基于摘要或公开版本整理，尚未逐篇复现。预印本与正式版本合并记录，待核实题录单列。
+**更新日期：2026-11-25。当前为持续扩展的文献与资源清单，不是完整系统综述。** 论文结论为作者报告；部分条目基于摘要或公开版本整理，尚未逐篇复现。预印本与正式版本合并记录，待核实题录单列。
 
-本次增量（2026-10-28）：正文新增十条研究记录，补入四份作者关联代码资源和 AlphaSearch 数据集入口；另增四条题录已核实的待核候选。文档活动对照研究于 10 月 23 日首次提交，其余属于遗漏补录或本次新核实记录，不均为 10 月 13 日后首次发表。2026 年储能自主竞价期刊论文与相关的 2024 年预印本保留各自题录，待确认版本关系后再合并。
+本次增量（2026-11-25）：新增五条记录——电价尖峰研究、P2P 生成式 AI 综述、探索性平衡市场报告、Foundation-MoE 和 MetaGrid；依据出版社摘要将 GranularLLM 从待核表移入正文。更新 RIS-LLM 与 P2P 专家工作流的发表信息，并复核资源状态。尖峰研究和综述发表于 11 月，Foundation-MoE 于 11 月上线期刊版本，短期研究报告与 MetaGrid 为 10 月遗漏补录；数值对照方法及未经同行评议的报告均单独注明。
 
-本次新增资源与 E2A-MAS 项目页状态核查于 2026-10-28；其他代码状态保留此前 9 月 16 日或 10 月 13 日的核查日期。链接紧随对应论文；“未找到公开实现”表示未确认匹配的公开代码。部分代码、数据、补充材料和代码待发布项目页分别标注，本次未运行所链接的实验。
+新增记录、E2A-MAS 和 P2P 专家工作流补充材料的资源核查日期为 2026-11-25，其他标签沿用此前核查。“未找到公开实现”表示未确认匹配的公开代码。尖峰研究的材料需申请获取；MetaGrid 需修正仓库目录布局；E2A-MAS 仍只有 README，P2P 补充材料仍为 PDF。本次未运行所链接的实验。
 
-检索范围：覆盖五个科学问题下 2024–2026 年 LLM 研究，重点检查 2026 年 10 月 13–28 日增量并补录遗漏。Google Scholar 对五组问题均返回可用结果；通过 arXiv/API、Crossref、出版社／作者／机构页面及 GitHub 内容核实。部分出版社全文仍不可访问，四条新增候选仅确认题录、缺少充分的一手方法证据，保留待核。本次为定向更新，不是穷尽式系统综述。
+检索范围：围绕五个科学问题定向检查 2026 年 10 月 28 日至 11 月 25 日增量，并补查部分旧候选与对照基线。证据来自 arXiv/API、Crossref、出版社／作者／机构页面和 GitHub 内容；Google Scholar 的五组查询均未产生可用结果，后续诊断请求返回验证页面；部分出版社全文也无法访问。一条待核记录移入正文，其余十一条继续待核。本次不是穷尽式系统综述。
 
 ## Contents
 
@@ -117,9 +117,9 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：用参数高效（PEFT）LLM 增强推理，做概率电价预测。
   - 阅读重点：推理增强 vs 纯数值基线的概率校准；参数高效微调带来的成本—增益权衡。
 
-- **RIS-LLM: Reasoning-informed semantic modeling of electricity market price dynamics** — *Advanced Engineering Informatics*, 2026. [DOI](https://doi.org/10.1016/j.aei.2026.104949) · 代码：未找到公开实现。
-  - 方法：将推理信息融入电价动态的语义建模。
-  - 阅读重点：推理增强相对纯特征/纯数值的增量；语义建模的泛化边界。
+- **RIS-LLM: Reasoning-informed semantic modeling of electricity market price dynamics** — *Advanced Engineering Informatics*, 76, Part A, 104949，2026 年 11 月。[DOI](https://doi.org/10.1016/j.aei.2026.104949) · 代码：未找到公开实现。
+  - 方法：通过波动感知分解构建因果—波动矩阵，再由时序语义模块将基于 Granger 的依赖关系与可解释市场标签对齐。
+  - 阅读重点：拆分数值分解、语义对齐及 LLM 主干的贡献。Granger 可预测性和语义标签本身不能证明因果识别或外部文本的信息增益。
 
 - **LLM Agent-Driven Dynamic Prediction for Day-Ahead Electricity Prices** — 2026 IEEE 2nd International Conference on Electronics, Energy Systems and Power Engineering (EESPE), 2026. [DOI](https://doi.org/10.1109/EESPE68405.2026.11648328) · 代码：未找到公开实现。
   - 方法：LLM 智能体驱动的日前电价动态预测。
@@ -139,12 +139,20 @@ A curated reading list of AI in electricity markets, with large language models 
 
 - **An on-premises end-to-end automated forecasting multi-agent system for the energy domain** — *Engineering Applications of Artificial Intelligence*, 181, Part 7, 115728，2026 年 10 月。[Paper](https://doi.org/10.1016/j.engappai.2026.115728) · [项目页（代码待发布）](https://github.com/ZihangQiu/E2A-MAS)
   - 方法：E2A-MAS 协调特征工程、预处理、模型选择和超参数调整；能源领域实验包含比利时 ods134 电价数据集。
-  - 阅读重点：区分电价预测精度与工作流成功率，并比较训练预算。2026-10-28 复查时，所链接仓库仅有承诺发布代码的 README，未提供公开实现。
+  - 阅读重点：区分电价预测精度与工作流成功率，并比较训练预算。2026-11-25 复查时，所链接仓库仅有承诺发布代码的 README，未提供公开实现。
 
 - **Do LLM-derived text features improve electricity price forecasts beyond document activity? Evidence from Australia's National Electricity Market** — arXiv，2026 年 10 月 23 日。[Paper](https://arxiv.org/abs/2610.32379) · [代码与已发布数据](https://github.com/ningfanxing-sys/nem-llm-text-activity)
   - 设计：将 LLM 文本表征同时与纯数值预测、匹配的文档数量／抽取失败数量对照比较；覆盖 AEMO 通知的 5–30 分钟预测和 WattClarity 新闻的日前预测，采用三个训练种子及时间平移安慰剂检验。
   - 结果：新闻内容相对活动计数没有统计显著增益；两类通知表征有小幅增益，但安慰剂证据混合。更强的运营预测或历史价格基准优于全部文本模型。
   - 资源：公开抽取／预测源码、保存的预测和结果核验脚本；版权新闻原文未分发，提供标识及衍生特征。本次检查资源，未运行核验脚本。
+
+- **Large Language Models for Forecasting of Electricity Price Spikes** — arXiv，2026 年 11 月 3 日。[Paper](https://arxiv.org/abs/2611.04354) · 代码／协议／预测结果：作者声明可合理申请获取，未确认公开存档。
+  - 设计：用本地 LLM 抽取 AEMO 通知特征，交给梯度提升模型预测 NEM 五个区域的尖峰发生概率，采用预测时点可见性规则、数值／AEMO 基准及规则文本对照。
+  - 结果：回溯留出集未证实预设的 60 分钟或 24 小时改善；仅三个交易日出现五次尖峰起始事件，不能据此断言通知没有价值。协议在本地冻结，未进行公开预注册。
+
+- **Day-Ahead Electricity Price Forecasting via Multi-Granularity Feature Alignment and Large Language Models** — *2026 IEEE 9th International Electrical and Energy Conference (CIEEC)*, 3582–3587，2026 年（GranularLLM）。[Paper](https://doi.org/10.1109/CIEEC69682.2026.11572089) · 代码：未找到公开实现 · [出版社摘要](https://ieeexplore.ieee.org/abstract/document/11572089/)
+  - 方法：将小时价格和日均价格投影到 LLM 嵌入空间，与提示拼接，采用 LoRA 适配和残差 MLP 预测未来 24 小时；实验使用比利时电价。
+  - 阅读重点：已核实摘要支持数值到 LLM 的特征对齐，尚不构成外部新闻或市场规则推理带来增益的证据。完整划分及消融仍待核查；本次依据出版社证据从待核表移入正文。
 
 ---
 
@@ -215,10 +223,10 @@ A curated reading list of AI in electricity markets, with large language models 
 
 当市场从集中式走向去中心化（P2P、社区交易、产消者），问题就不再只是“单个主体最优”，而是**机制如何让自利的分布式参与者协调出好的整体结果**——既有效率又有公平。难点是如何在信息不对称、异质偏好和物理网络约束下设计激励，并让智能体在机制内“学会”合作或公平。LLM 在这里常作“示范者”“critic”或“公平性评价者”。
 
-- **LLM-Enhanced Multi-Agent Reinforcement Learning with Expert Workflow for Real-Time P2P Energy Trading** — 2025 预印本；*IEEE Transactions on Smart Grid*, Early Access, 2026. [Paper](https://arxiv.org/abs/2507.14995) · [补充材料](https://github.com/jzk0806/P2P-llm-supplementary) · [DOI](https://doi.org/10.1109/TSG.2026.3684885)
+- **LLM-Enhanced Multi-Agent Reinforcement Learning with Expert Workflow for Real-Time P2P Energy Trading** — 2025 预印本；*IEEE Transactions on Smart Grid*, 17(5), 4538–4553，2026 年（4 月 17 日上线）。 [Paper](https://arxiv.org/abs/2507.14995) · [补充材料](https://github.com/jzk0806/P2P-llm-supplementary) · [DOI](https://doi.org/10.1109/TSG.2026.3684885)
   - 场景：考虑配电网约束的实时 P2P 交易。
   - 方法：LLM 生成个性化专家策略，通过模仿指导多智能体强化学习，并使用差分注意力 critic。
-  - 结果：作者报告交易成本和电压越限率下降。仓库链接为补充材料，不代表完整可复现实现。
+  - 结果：作者报告交易成本和电压越限率下降。11 月 25 日复核时，所链接仓库仍仅包含补充材料 PDF。
 
 - **Scalable Fairness Shaping with LLM-Guided Multi-Agent Reinforcement Learning for Peer-to-Peer Electricity Markets** — 2025 年预印本；*Utilities Policy*, 100, 102168，2026 年 6 月。[Paper](https://arxiv.org/abs/2508.18610) · [部分代码／玩具演示](https://github.com/SHRENIK000/fairmarket-rl-llm-fairness-energy-markets) · [DOI](https://doi.org/10.1016/j.jup.2026.102168)
   - 方法：LLM 评价器在每轮拍卖后评估电网依赖、卖方公平与定价公平，并将评分加入连续双向拍卖中的 MARL 奖励。
@@ -273,6 +281,10 @@ A curated reading list of AI in electricity markets, with large language models 
   - 范围／方法：面向区块链 P2P 交易的安全基础设施。本地微调 LLM 解析日志并关联事件，联邦聚合与 GNN 用于识别跨节点攻击。
   - 阅读重点：攻击检测、隐私假设和协作开销应与出清及竞价性能分别评估。机构摘要已确认框架，详细实验设置和公开资源仍待核实。
 
+- **Generative AI Architectures for Next-Generation Peer-to-Peer Energy Markets: A Review** — *Energies*, 19(22), 5611，2026 年 11 月 20 日。[Paper](https://www.mdpi.com/1996-1073/19/22/5611) · 代码：未找到公开实现（综述，无新增数据集） · [DOI](https://doi.org/10.3390/en19225611)
+  - 范围：定向叙述性综述，整理 LLM 在 P2P 预测、竞价／协商、MARL 指导及混合架构中的作用；检索截至 11 月 3 日。
+  - 阅读重点：区分 LLM 的解释／策略生成与可验证的网络可行性、出清和结算。应回到其引用的一手研究检查消融、公平性和验证场景；本文提供研究梳理，未新增交易性能实验。
+
 ---
 
 ## 问题四：市场如何建模、仿真与行为校准
@@ -319,6 +331,10 @@ A curated reading list of AI in electricity markets, with large language models 
 - **LLM-CECM: A simulation framework for strategic generation behavior in coupled electricity-carbon markets** — *Renewable Energy*, 273, 126139，2026 年（10 月刊）；作者预印本于 2026 年 4 月 24 日发布。[Paper](https://doi.org/10.1016/j.renene.2026.126139) · 代码：未找到公开实现 · [作者版本](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6643509)
   - 方法：LLM 智能体以人设、记忆和信念模块生成电—碳订单，结合自适应推理频率和固定深度反事实推理；碳出清结果在网络调度前反馈至电力报价。
   - 阅读重点：实验将澳大利亚市场输入与 IEEE 118 节点测试系统结合；效率与价格路径结果属于仿真证据，不能解释为均衡证明或真实交易者行为校准。
+
+- **LLM Agent Coordination Intent in a Simplified Energy Trading Market Simulation** — AI Collusion Research Sprint 参与者报告，2026 年 10 月 26 日；由 Apart Research 托管的早期工作，非该机构正式出版物或同行评议论文。[报告与项目](https://apartresearch.com/sprints/projects/llm-agent-coordination-intent-in-a-simplified-energy-trading-market-simulation-c50z) · [代码／简化市场仿真](https://github.com/Stasfer02/research_sprint-colluding-agents-energy-trade)
+  - 设计：三家企业各设交易台和平衡台，共享利润目标；每种条件运行五次，在简化平衡市场中比较推理及仅以文字提出、未强制执行的监管要求。
+  - 阅读重点：推理记录中的意图和公开请求不能证明实际合谋或有利可图的操纵；跨企业意图评分未获验证，市场真实性也未系统核实。仓库包含出清／结算、推理记录分析及已保存运行，本次仅检查、未执行。
 
 ---
 
@@ -408,6 +424,10 @@ A curated reading list of AI in electricity markets, with large language models 
   - 方法：统一基准评估时序基础模型的概率电价预测。
   - 阅读重点：与“Benchmarking Pre-Trained Time Series Models”一条互补；概率预测评估的统一口径。
 
+- **Foundation-MoE: Sparse residual routing over pretrained time-series models for day-ahead electricity price forecasting** — *Energy Conversion and Management: X*，2026 年 11 月 9 日上线；编入 32 卷、102441（12 月刊）。[Paper](https://doi.org/10.1016/j.ecmx.2026.102441) · 代码：未找到公开实现；原始市场数据受限。
+  - 非 LLM 对照：通过逐预测步 Top-2 路由、围绕 Chronos2-LoRA 的残差修正及测试前风险校准，组合五个数值预测器；在中国四个省级市场评估。
+  - 结果／阅读重点：更简单的双模型校准取得更低的平均 MAE／RMSE。需拆分适配、路由与校准贡献，并同步跨市场时间划分。原始数据不可自由再分发，适配器／权重发布仍需相关数据持有方批准。
+
 ### LLM 在能源/电力领域的综述（全景入口）
 
 - **Exploring the capabilities and limitations of large language models in the electric energy sector** — *Joule*, 2024. [DOI](https://doi.org/10.1016/j.joule.2024.05.009) · 代码：未找到公开实现。
@@ -446,6 +466,10 @@ A curated reading list of AI in electricity markets, with large language models 
 - **Probabilistic Forecasting of Real-Time Electricity Market Signals via Interpretable Generative AI** — arXiv，2024 年 3 月 9 日。[Paper](https://arxiv.org/abs/2403.05743) · 代码：未找到公开实现。
   - 非 LLM 方法：WIAE-GPF 使用弱新息自编码器，对节点电价、价差和不平衡等实时市场信号进行生成式概率预测。
   - 阅读重点：概率校准、时间依赖及可解释数值表征；这里的生成式建模不等于语言模型。
+
+- **Cross-Market Meta-Learning for Electricity Price Forecasting** — arXiv，2026 年 10 月 12 日（MetaGrid）；作者注明获 NeurIPS 2026 Workshop on AI Foundations for Power Grids 接收。[Paper](https://arxiv.org/abs/2610.17387) · [代码（需修正目录布局）](https://github.com/delaramphf/MetaGrid)
+  - 非 LLM 对照：在美国五个 ISO 间进行拓扑感知 Transformer 元学习，与基线采用相同价格、日前负荷预测及日历输入，可用于检验跨市场增益是否需要语言信息。
+  - 阅读重点：平均改善伴随 ERCOT 表现较弱、MISO 适配退化和尖峰低估。仓库有源码，但平铺布局与 README 命令和 `src` 导入不匹配，且不含数据、权重和结果；本次未测试运行。
 
 ### 强化学习竞价与储能
 
@@ -585,7 +609,6 @@ A curated reading list of AI in electricity markets, with large language models 
 | 2026 | Large Language Model Applications in Power Systems: A Comprehensive Review and Outlook | [J. Modern Power Systems & Clean Energy / DOI](https://doi.org/10.35833/MPCE.2025.000760) · 代码：未找到公开实现 | 综述中电力市场章节占比；作为入口还是单列 |
 | 2025 | An Event-Aware Price Spread Arbitrage Decision Framework for Electricity Retailers in Spot Markets | [IEEE EI² 2025 / DOI](https://doi.org/10.1109/EI268505.2025.11425643) · 代码：未找到公开实现 | Crossref 已核实题名、会议与 2066–2070 页；一手摘要／全文、LLM 作用、市场数据及套利评估仍待核实 |
 | 2026 | A knowledge graph-augmented algorithm for day-ahead electricity price forecasting in electricity markets based on large language model and graph neural network fusion | [SENPS 2026 / SPIE / DOI](https://doi.org/10.1117/12.3120337) · 代码：未找到公开实现 | 一手方法、图谱构建、信息时点及数值基线 |
-| 2026 | Day-Ahead Electricity Price Forecasting via Multi-Granularity Feature Alignment and Large Language Models | [IEEE CIEEC 2026 / DOI](https://doi.org/10.1109/CIEEC69682.2026.11572089) · 代码：未找到公开实现 | 一手摘要／全文、LLM 作用及特征对齐消融；已核实 3582–3587 页 |
 | 2026 | Agents for Rule-Intensive Decision Making in Virtual Power Plant Operations | [IEEE PSGEC 2026 / DOI](https://doi.org/10.1109/PSGEC70194.2026.11719196) · 代码：未找到公开实现 | 一手摘要／全文、市场规则任务及智能体评测；已核实 29–34 页 |
 | 2026 | A Hierarchical LLM-MARL Framework for Market-Oriented Cooperative Scheduling of Multiple Virtual Power Plants | [IEEE ICAITA 2026 / DOI](https://doi.org/10.1109/ICAITA71179.2026.11737037) · 代码：未找到公开实现 | 一手摘要／全文、LLM 与 MARL 分工及市场机制；已核实 980–986 页 |
 
@@ -601,7 +624,7 @@ A curated reading list of AI in electricity markets, with large language models 
 | --- | --- | --- |
 | 价格形成与预测 | 信息增益、事件时效 | NSW-EPNews、TRACE 与 NEM 文档活动研究已提供具体检验；跨市场复核需分离内容、文档数量、抽取失败及更强数值对照的贡献 |
 | 参与者竞价与决策 | 预测到收益、规则迁移 | LLM-native 竞价环境稀缺；决策收益多以仿真而非真实市场验证 |
-| 市场机制与交易设计 | 公平性与经济激励的权衡 | 公平与激励的证据仍依赖场景；应区分已有 MARL 合谋检验与尚待研究的 LLM 竞价者问题 |
+| 市场机制与交易设计 | 公平性与经济激励的权衡 | 公平与激励的证据仍依赖场景；应区分 MARL 合谋检验、LLM 协调意图报告与已证实的价格／利润影响 |
 | 市场建模与仿真 | 行为校准 | LLM 仿真产生的报价分布/价格鲜有对照真实数据校准 |
 | 规则、政策与评测 | 专业能力 vs 交易收益 | 问答得分与实际交易收益之间的鸿沟未被量化 |
 
